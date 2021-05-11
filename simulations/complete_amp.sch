@@ -1,0 +1,778 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R12
+U 1 1 5FFC2685
+P 4400 4500
+F 0 "R12" H 4470 4546 50  0000 L CNN
+F 1 "475k" H 4470 4455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4330 4500 50  0001 C CNN
+F 3 "~" H 4400 4500 50  0001 C CNN
+	1    4400 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 4400 3500 4100
+Wire Wire Line
+	6750 4300 6650 4300
+Wire Wire Line
+	6750 6100 6650 6100
+Wire Wire Line
+	6650 4300 6650 4750
+$Comp
+L Device:R R19
+U 1 1 5FFCB3C4
+P 7950 6000
+F 0 "R19" V 8157 6000 50  0000 C CNN
+F 1 "110" V 8066 6000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7880 6000 50  0001 C CNN
+F 3 "~" H 7950 6000 50  0001 C CNN
+	1    7950 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R18
+U 1 1 5FFCCE21
+P 7950 4200
+F 0 "R18" V 8157 4200 50  0000 C CNN
+F 1 "110" V 8066 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7880 4200 50  0001 C CNN
+F 3 "~" H 7950 4200 50  0001 C CNN
+	1    7950 4200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8600 5200 8900 5200
+Wire Wire Line
+	8900 5000 8600 5000
+Wire Wire Line
+	8600 5000 8600 4200
+$Comp
+L Device:R R21
+U 1 1 5FFCF65A
+P 9150 6000
+F 0 "R21" V 9357 6000 50  0000 C CNN
+F 1 "220" V 9266 6000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 9080 6000 50  0001 C CNN
+F 3 "~" H 9150 6000 50  0001 C CNN
+	1    9150 6000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8600 6000 9000 6000
+Connection ~ 8600 6000
+Wire Wire Line
+	8600 6000 8600 5200
+Wire Wire Line
+	9300 6000 9700 6000
+Wire Wire Line
+	9700 5100 9500 5100
+$Comp
+L Device:R R20
+U 1 1 5FFD20E6
+P 9150 4200
+F 0 "R20" V 9357 4200 50  0000 C CNN
+F 1 "220" V 9266 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 9080 4200 50  0001 C CNN
+F 3 "~" H 9150 4200 50  0001 C CNN
+	1    9150 4200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9000 4200 8600 4200
+Connection ~ 8600 4200
+Wire Wire Line
+	9300 4200 9700 4200
+Wire Wire Line
+	9700 4200 9700 4500
+Connection ~ 9700 5100
+Wire Wire Line
+	8100 4200 8600 4200
+Wire Wire Line
+	8600 6000 8100 6000
+$Comp
+L Device:R_POT_TRIM RV1
+U 1 1 5FFC2E47
+P 4400 5050
+F 0 "RV1" H 4330 5096 50  0000 R CNN
+F 1 "50k" H 4330 5005 50  0000 R CNN
+F 2 "Potentiometer_SMD:Potentiometer_Bourns_TC33X_Vertical" H 4400 5050 50  0001 C CNN
+F 3 "~" H 4400 5050 50  0001 C CNN
+F 4 "Bourns" H 4400 5050 50  0001 C CNN "Mfg"
+F 5 "TC33X-2-503E" H 4400 5050 50  0001 C CNN "Mfg Part No"
+F 6 "X" H 4400 5050 50  0001 C CNN "Spice_Primitive"
+F 7 "potentiometer" H 4400 5050 50  0001 C CNN "Spice_Model"
+F 8 "Y" H 4400 5050 50  0001 C CNN "Spice_Netlist_Enabled"
+F 9 "/home/petteri/gitrepos/oscilloscope-probes/simulations/potentiometer.txt" H 4400 5050 50  0001 C CNN "Spice_Lib_File"
+	1    4400 5050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 5FFC6B30
+P 4400 5650
+F 0 "R13" H 4330 5604 50  0000 R CNN
+F 1 "475k" H 4330 5695 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4330 5650 50  0001 C CNN
+F 3 "~" H 4400 5650 50  0001 C CNN
+	1    4400 5650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6650 6100 6650 5450
+Wire Wire Line
+	3500 4700 3500 5050
+Wire Wire Line
+	3500 5650 3500 5900
+Connection ~ 3500 5900
+Connection ~ 3500 5050
+Wire Wire Line
+	3500 5050 3500 5350
+Wire Wire Line
+	7350 4200 7550 4200
+Wire Wire Line
+	7350 6000 7550 6000
+$Comp
+L Device:R R14
+U 1 1 607C1347
+P 7550 4450
+F 0 "R14" H 7620 4496 50  0000 L CNN
+F 1 "220" H 7620 4405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7480 4450 50  0001 C CNN
+F 3 "~" H 7550 4450 50  0001 C CNN
+	1    7550 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 4300 7550 4200
+Connection ~ 7550 4200
+Wire Wire Line
+	7550 4200 7800 4200
+Wire Wire Line
+	7550 5850 7550 6000
+Connection ~ 7550 6000
+Wire Wire Line
+	7550 6000 7800 6000
+Wire Wire Line
+	7550 5550 7550 5450
+Wire Wire Line
+	6650 5450 7550 5450
+Wire Wire Line
+	7550 4750 7550 4600
+Wire Wire Line
+	6650 4750 7550 4750
+$Comp
+L Switch:SW_SPST SW1
+U 1 1 607DECED
+P 8050 5100
+F 0 "SW1" V 8096 5198 50  0000 L CNN
+F 1 "GAIN" V 8005 5198 50  0000 L CNN
+F 2 "oscilloscope-probes:78HF01GWRT" H 8050 5100 50  0001 C CNN
+F 3 "~" H 8050 5100 50  0001 C CNN
+F 4 "C&K" H 8050 5100 50  0001 C CNN "Mfg"
+F 5 "JS202011JCQN" H 8050 5100 50  0001 C CNN "Mfg Part No"
+	1    8050 5100
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	9700 5100 9700 6000
+$Comp
+L power:-6V #PWR017
+U 1 1 6096A4EC
+P 9100 5400
+F 0 "#PWR017" H 9100 5500 50  0001 C CNN
+F 1 "-6V" H 9115 5573 50  0000 C CNN
+F 2 "" H 9100 5400 50  0001 C CNN
+F 3 "" H 9100 5400 50  0001 C CNN
+	1    9100 5400
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:-6V #PWR015
+U 1 1 6096A75C
+P 6950 6300
+F 0 "#PWR015" H 6950 6400 50  0001 C CNN
+F 1 "-6V" H 6965 6473 50  0000 C CNN
+F 2 "" H 6950 6300 50  0001 C CNN
+F 3 "" H 6950 6300 50  0001 C CNN
+	1    6950 6300
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+6V #PWR016
+U 1 1 6096AAAE
+P 9100 4800
+F 0 "#PWR016" H 9100 4650 50  0001 C CNN
+F 1 "+6V" H 9115 4973 50  0000 C CNN
+F 2 "" H 9100 4800 50  0001 C CNN
+F 3 "" H 9100 4800 50  0001 C CNN
+	1    9100 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+6V #PWR014
+U 1 1 6096AE7F
+P 6950 5700
+F 0 "#PWR014" H 6950 5550 50  0001 C CNN
+F 1 "+6V" H 6965 5873 50  0000 C CNN
+F 2 "" H 6950 5700 50  0001 C CNN
+F 3 "" H 6950 5700 50  0001 C CNN
+	1    6950 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+6V #PWR012
+U 1 1 6096B418
+P 6950 3900
+F 0 "#PWR012" H 6950 3750 50  0001 C CNN
+F 1 "+6V" H 6965 4073 50  0000 C CNN
+F 2 "" H 6950 3900 50  0001 C CNN
+F 3 "" H 6950 3900 50  0001 C CNN
+	1    6950 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-6V #PWR013
+U 1 1 6096B75C
+P 6950 4500
+F 0 "#PWR013" H 6950 4600 50  0001 C CNN
+F 1 "-6V" H 6965 4673 50  0000 C CNN
+F 2 "" H 6950 4500 50  0001 C CNN
+F 3 "" H 6950 4500 50  0001 C CNN
+	1    6950 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 609A4AE0
+P 7750 5450
+F 0 "R17" V 7543 5450 50  0000 C CNN
+F 1 "22" V 7634 5450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7680 5450 50  0001 C CNN
+F 3 "~" H 7750 5450 50  0001 C CNN
+	1    7750 5450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8050 4750 8050 4900
+Wire Wire Line
+	7900 5450 8050 5450
+Wire Wire Line
+	8050 5450 8050 5300
+Wire Wire Line
+	7600 4750 7550 4750
+Connection ~ 7550 4750
+Wire Wire Line
+	7600 5450 7550 5450
+Connection ~ 7550 5450
+Wire Wire Line
+	3500 5900 4400 5900
+Wire Wire Line
+	4400 4100 4400 4350
+Wire Wire Line
+	4400 5800 4400 5900
+Connection ~ 4400 5900
+Wire Wire Line
+	4400 5900 6750 5900
+$Comp
+L Device:C C15
+U 1 1 60AE6769
+P 2800 6000
+F 0 "C15" V 2960 6000 50  0000 C CNN
+F 1 "1p" V 3051 6000 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2838 5850 50  0001 C CNN
+F 3 "~" H 2800 6000 50  0001 C CNN
+F 4 "Stackpole" H 2800 6000 50  0001 C CNN "Mfg"
+F 5 "CML0603C0G200JT50V" H 2800 6000 50  0001 C CNN "Mfg Part No"
+F 6 "NP0" H 2800 6000 50  0001 C CNN "Notes"
+	1    2800 6000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2950 5900 2950 6000
+$Comp
+L oscilloscope_probes:OPA659DRB U2
+U 1 1 60B65EF9
+P 7050 4200
+F 0 "U2" H 7100 4450 50  0000 L CNN
+F 1 "OPA659" H 7100 4350 50  0000 L CNN
+F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 6950 4000 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 7200 4350 50  0001 C CNN
+F 4 "X" H 7050 4200 50  0001 C CNN "Spice_Primitive"
+F 5 "OPA659" H 7050 4200 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 7050 4200 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "3 2 7 4 6" H 7050 4200 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/petteri/gitrepos/oscilloscope-probes/simulations/OPA659_Pspice_Model.txt" H 7050 4200 50  0001 C CNN "Spice_Lib_File"
+	1    7050 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 5100 10150 5100
+$Comp
+L Device:R R22
+U 1 1 5FFD71E5
+P 10300 5100
+F 0 "R22" V 10093 5100 50  0000 C CNN
+F 1 "49.9" V 10184 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10230 5100 50  0001 C CNN
+F 3 "~" H 10300 5100 50  0001 C CNN
+	1    10300 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R15
+U 1 1 607C0C4F
+P 7550 5700
+F 0 "R15" H 7620 5746 50  0000 L CNN
+F 1 "220" H 7620 5655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7480 5700 50  0001 C CNN
+F 3 "~" H 7550 5700 50  0001 C CNN
+	1    7550 5700
+	1    0    0    -1  
+$EndComp
+Connection ~ 2950 5900
+Wire Wire Line
+	2950 5800 2950 5900
+$Comp
+L Device:R R10
+U 1 1 60AE60A5
+P 2800 5800
+F 0 "R10" V 2593 5800 50  0000 C CNN
+F 1 "9.53Meg" V 2684 5800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2730 5800 50  0001 C CNN
+F 3 "~" H 2800 5800 50  0001 C CNN
+	1    2800 5800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2700 5200 2700 5050
+Text Label 3800 4100 0    50   ~ 0
+IN+
+Text Label 3850 5900 0    50   ~ 0
+IN-
+Wire Wire Line
+	7050 6300 6950 6300
+Wire Wire Line
+	7050 4500 6950 4500
+Connection ~ 6950 4500
+Wire Wire Line
+	9200 5400 9100 5400
+Wire Wire Line
+	2950 4100 2950 4200
+Connection ~ 2950 4100
+Wire Wire Line
+	2950 4000 2950 4100
+$Comp
+L Device:R R9
+U 1 1 60A9E9B4
+P 2800 4000
+F 0 "R9" V 2593 4000 50  0000 C CNN
+F 1 "9.53Meg" V 2684 4000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2730 4000 50  0001 C CNN
+F 3 "~" H 2800 4000 50  0001 C CNN
+	1    2800 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C14
+U 1 1 60A9EFD0
+P 2800 4200
+F 0 "C14" V 2960 4200 50  0000 C CNN
+F 1 "1p" V 3051 4200 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2838 4050 50  0001 C CNN
+F 3 "~" H 2800 4200 50  0001 C CNN
+F 4 "Stackpole" H 2800 4200 50  0001 C CNN "Mfg"
+F 5 "CML0603C0G200JT50V" H 2800 4200 50  0001 C CNN "Mfg Part No"
+F 6 "NP0" H 2800 4200 50  0001 C CNN "Notes"
+	1    2800 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2650 5800 2650 5900
+Wire Wire Line
+	2650 4000 2650 4100
+Wire Wire Line
+	2700 5050 3500 5050
+Wire Wire Line
+	2950 5900 3500 5900
+Wire Wire Line
+	2950 4100 3500 4100
+Connection ~ 3500 4100
+Wire Wire Line
+	3500 4100 4400 4100
+$Comp
+L Device:C C2
+U 1 1 609CB178
+P 3500 5500
+F 0 "C2" H 3615 5546 50  0000 L CNN
+F 1 "20p" H 3615 5455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3538 5350 50  0001 C CNN
+F 3 "~" H 3500 5500 50  0001 C CNN
+F 4 "Stackpole" H 3500 5500 50  0001 C CNN "Mfg"
+F 5 "CML0603C0G101JT50V" H 3500 5500 50  0001 C CNN "Mfg Part No"
+F 6 "NP0" H 3500 5500 50  0001 C CNN "Notes"
+	1    3500 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 609CB56D
+P 3500 4550
+F 0 "C1" H 3615 4596 50  0000 L CNN
+F 1 "20p" H 3615 4505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3538 4400 50  0001 C CNN
+F 3 "~" H 3500 4550 50  0001 C CNN
+F 4 "Stackpole" H 3500 4550 50  0001 C CNN "Mfg"
+F 5 "CML0603C0G101JT50V" H 3500 4550 50  0001 C CNN "Mfg Part No"
+F 6 "NP0" H 3500 4550 50  0001 C CNN "Notes"
+	1    3500 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V_diff1
+U 1 1 609D2CD2
+P 1600 5100
+F 0 "V_diff1" H 1828 5146 50  0000 L CNN
+F 1 "dc 0" H 1828 5055 50  0000 L CNN
+F 2 "" H 1600 5100 50  0001 C CNN
+F 3 "~" H 1600 5100 50  0001 C CNN
+	1    1600 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V_cm1
+U 1 1 609D3352
+P 1600 6700
+F 0 "V_cm1" H 1828 6746 50  0000 L CNN
+F 1 "dc 0" H 1828 6655 50  0000 L CNN
+F 2 "" H 1600 6700 50  0001 C CNN
+F 3 "~" H 1600 6700 50  0001 C CNN
+	1    1600 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND01
+U 1 1 609D3EA9
+P 1600 7250
+F 0 "#GND01" H 1600 7150 50  0001 C CNN
+F 1 "0" H 1600 7339 50  0000 C CNN
+F 2 "" H 1600 7250 50  0001 C CNN
+F 3 "~" H 1600 7250 50  0001 C CNN
+	1    1600 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 7250 1600 7000
+$Comp
+L pspice:0 #GND02
+U 1 1 609D590F
+P 2700 5200
+F 0 "#GND02" H 2700 5100 50  0001 C CNN
+F 1 "0" H 2700 5289 50  0000 C CNN
+F 2 "" H 2700 5200 50  0001 C CNN
+F 3 "~" H 2700 5200 50  0001 C CNN
+	1    2700 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND04
+U 1 1 609D5C1D
+P 9700 4500
+F 0 "#GND04" H 9700 4400 50  0001 C CNN
+F 1 "0" H 9700 4589 50  0000 C CNN
+F 2 "" H 9700 4500 50  0001 C CNN
+F 3 "~" H 9700 4500 50  0001 C CNN
+	1    9700 4500
+	1    0    0    -1  
+$EndComp
+Text HLabel 11000 5100 2    50   Output ~ 0
+OUT
+Wire Wire Line
+	1600 4800 1600 4100
+Wire Wire Line
+	1600 4100 2650 4100
+Connection ~ 2650 4100
+Wire Wire Line
+	2650 4100 2650 4200
+Wire Wire Line
+	2650 5900 1600 5900
+Wire Wire Line
+	1600 5900 1600 5400
+Connection ~ 2650 5900
+Wire Wire Line
+	2650 5900 2650 6000
+Wire Wire Line
+	1600 5900 1600 6400
+Connection ~ 1600 5900
+$Comp
+L pspice:VSOURCE V2
+U 1 1 609DD109
+P 1750 2650
+F 0 "V2" H 1978 2696 50  0000 L CNN
+F 1 "dc 6" H 1978 2605 50  0000 L CNN
+F 2 "" H 1750 2650 50  0001 C CNN
+F 3 "~" H 1750 2650 50  0001 C CNN
+	1    1750 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V1
+U 1 1 609DD43C
+P 1750 2050
+F 0 "V1" H 1978 2096 50  0000 L CNN
+F 1 "dc 6" H 1978 2005 50  0000 L CNN
+F 2 "" H 1750 2050 50  0001 C CNN
+F 3 "~" H 1750 2050 50  0001 C CNN
+	1    1750 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND03
+U 1 1 609DD8D6
+P 2800 2450
+F 0 "#GND03" H 2800 2350 50  0001 C CNN
+F 1 "0" H 2800 2539 50  0000 C CNN
+F 2 "" H 2800 2450 50  0001 C CNN
+F 3 "~" H 2800 2450 50  0001 C CNN
+	1    2800 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-6V #PWR02
+U 1 1 609DDA9C
+P 2800 3050
+F 0 "#PWR02" H 2800 3150 50  0001 C CNN
+F 1 "-6V" H 2815 3223 50  0000 C CNN
+F 2 "" H 2800 3050 50  0001 C CNN
+F 3 "" H 2800 3050 50  0001 C CNN
+	1    2800 3050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+6V #PWR01
+U 1 1 609DDD86
+P 2800 1550
+F 0 "#PWR01" H 2800 1400 50  0001 C CNN
+F 1 "+6V" H 2815 1723 50  0000 C CNN
+F 2 "" H 2800 1550 50  0001 C CNN
+F 3 "" H 2800 1550 50  0001 C CNN
+	1    2800 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 1550 1750 1550
+Wire Wire Line
+	1750 1550 1750 1750
+Wire Wire Line
+	1750 2350 2800 2350
+Wire Wire Line
+	2800 2350 2800 2450
+Connection ~ 1750 2350
+Wire Wire Line
+	2800 3050 1750 3050
+Wire Wire Line
+	1750 3050 1750 2950
+$Comp
+L oscilloscope_probes:OPA659DRB U1
+U 1 1 609E6E4E
+P 7050 6000
+F 0 "U1" H 7100 6250 50  0000 L CNN
+F 1 "OPA659" H 7100 6150 50  0000 L CNN
+F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 6950 5800 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 7200 6150 50  0001 C CNN
+F 4 "X" H 7050 6000 50  0001 C CNN "Spice_Primitive"
+F 5 "OPA659" H 7050 6000 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 7050 6000 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "3 2 7 4 6" H 7050 6000 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/petteri/gitrepos/oscilloscope-probes/simulations/OPA659_Pspice_Model.txt" H 7050 6000 50  0001 C CNN "Spice_Lib_File"
+	1    7050 6000
+	1    0    0    -1  
+$EndComp
+Connection ~ 6950 6300
+$Comp
+L oscilloscope_probes:OPA659DRB U3
+U 1 1 609E74A1
+P 9200 5100
+F 0 "U3" H 9250 5350 50  0000 L CNN
+F 1 "OPA659" H 9250 5250 50  0000 L CNN
+F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 9100 4900 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 9350 5250 50  0001 C CNN
+F 4 "X" H 9200 5100 50  0001 C CNN "Spice_Primitive"
+F 5 "OPA659" H 9200 5100 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 9200 5100 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "3 2 7 4 6" H 9200 5100 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/petteri/gitrepos/oscilloscope-probes/simulations/OPA659_Pspice_Model.txt" H 9200 5100 50  0001 C CNN "Spice_Lib_File"
+	1    9200 5100
+	1    0    0    -1  
+$EndComp
+Connection ~ 9100 5400
+Wire Wire Line
+	7900 4750 8050 4750
+$Comp
+L Device:R R2
+U 1 1 609EE75E
+P 5300 6400
+F 0 "R2" V 5507 6400 50  0000 C CNN
+F 1 "36.125k" V 5416 6400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5230 6400 50  0001 C CNN
+F 3 "~" H 5300 6400 50  0001 C CNN
+	1    5300 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 609EEB54
+P 5300 6800
+F 0 "R3" V 5507 6800 50  0000 C CNN
+F 1 "14.55k" V 5416 6800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5230 6800 50  0001 C CNN
+F 3 "~" H 5300 6800 50  0001 C CNN
+	1    5300 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE Voffset1
+U 1 1 609F388C
+P 6400 4100
+F 0 "Voffset1" V 5897 4100 50  0000 C CNN
+F 1 "dc 6m" V 5988 4100 50  0000 C CNN
+F 2 "" H 6400 4100 50  0001 C CNN
+F 3 "~" H 6400 4100 50  0001 C CNN
+	1    6400 4100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6100 4100 4400 4100
+Connection ~ 4400 4100
+Wire Wire Line
+	6700 4100 6750 4100
+Wire Wire Line
+	10450 5100 10750 5100
+$Comp
+L Device:R R5
+U 1 1 60A05133
+P 10750 5600
+F 0 "R5" V 10543 5600 50  0000 C CNN
+F 1 "1Meg" V 10634 5600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10680 5600 50  0001 C CNN
+F 3 "~" H 10750 5600 50  0001 C CNN
+	1    10750 5600
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:0 #GND05
+U 1 1 60A05703
+P 10750 6000
+F 0 "#GND05" H 10750 5900 50  0001 C CNN
+F 1 "0" H 10750 6089 50  0000 C CNN
+F 2 "" H 10750 6000 50  0001 C CNN
+F 3 "~" H 10750 6000 50  0001 C CNN
+	1    10750 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10750 6000 10750 5750
+Wire Wire Line
+	10750 5450 10750 5100
+Connection ~ 10750 5100
+Wire Wire Line
+	10750 5100 11000 5100
+Wire Wire Line
+	4400 4650 4400 4750
+Wire Wire Line
+	4700 4750 4400 4750
+Connection ~ 4400 4750
+Wire Wire Line
+	4400 4750 4400 4900
+$Comp
+L power:-6V #PWR03
+U 1 1 60A27C72
+P 5300 6950
+F 0 "#PWR03" H 5300 7050 50  0001 C CNN
+F 1 "-6V" H 5315 7123 50  0000 C CNN
+F 2 "" H 5300 6950 50  0001 C CNN
+F 3 "" H 5300 6950 50  0001 C CNN
+	1    5300 6950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4400 5200 4400 5350
+Wire Wire Line
+	5300 6550 5300 6600
+$Comp
+L power:+6V #PWR04
+U 1 1 60A2DDB8
+P 5300 6250
+F 0 "#PWR04" H 5300 6100 50  0001 C CNN
+F 1 "+6V" H 5315 6423 50  0000 C CNN
+F 2 "" H 5300 6250 50  0001 C CNN
+F 3 "" H 5300 6250 50  0001 C CNN
+	1    5300 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 6600 5100 6600
+Wire Wire Line
+	5100 6600 5100 4750
+Wire Wire Line
+	5100 4750 5000 4750
+Connection ~ 5300 6600
+Wire Wire Line
+	5300 6600 5300 6650
+Connection ~ 4400 5350
+Wire Wire Line
+	4400 5350 4400 5500
+Wire Wire Line
+	4100 5350 4100 5050
+Wire Wire Line
+	3500 5050 4100 5050
+Connection ~ 4100 5050
+Wire Wire Line
+	4100 5050 4250 5050
+$Comp
+L Device:R R16
+U 1 1 609A456A
+P 7750 4750
+F 0 "R16" V 7865 4750 50  0000 C CNN
+F 1 "22" V 7956 4750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7680 4750 50  0001 C CNN
+F 3 "~" H 7750 4750 50  0001 C CNN
+	1    7750 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 609CF7B3
+P 4850 4750
+F 0 "R1" V 4643 4750 50  0000 C CNN
+F 1 "10Meg" V 4734 4750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4780 4750 50  0001 C CNN
+F 3 "~" H 4850 4750 50  0001 C CNN
+	1    4850 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60A30D8B
+P 4250 5350
+F 0 "R?" V 4043 5350 50  0000 C CNN
+F 1 "10Meg" V 4134 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4180 5350 50  0001 C CNN
+F 3 "~" H 4250 5350 50  0001 C CNN
+	1    4250 5350
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC

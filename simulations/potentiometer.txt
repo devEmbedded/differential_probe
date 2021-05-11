@@ -1,0 +1,8 @@
+.subckt potentiometer a b c R=50k ratio=0.50
++ Rmin=1 Rab=Rmin+ratio*(R-2*Rmin) Rbc=R-Rab
++ TC=0 Kf=0
+.model potentiometer R TC1=TC TC2=0 Kf=Kf Af=2
+Rab a b potentiometer R=Rab
+Rbc b c potentiometer R=Rbc
+.ends potentiometer
+

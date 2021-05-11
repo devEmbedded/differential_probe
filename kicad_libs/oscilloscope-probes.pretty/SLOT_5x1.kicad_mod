@@ -1,0 +1,9 @@
+(module SLOT_5x1 (layer F.Cu) (tedit 5FFE9B52)
+  (fp_text reference REF** (at 0 2.4) (layer F.SilkS) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value SLOT_5x1 (at 0 -2.6) (layer F.Fab) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (pad 1 thru_hole oval (at 0 0) (size 6.5 2.6) (drill oval 5 1.1) (layers *.Cu *.Mask))
+)

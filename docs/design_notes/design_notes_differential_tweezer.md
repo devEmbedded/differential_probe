@@ -1,0 +1,277 @@
+Design notes for differential tweezer
+=====================================
+
+Revision 1, 1/2021
+------------------
+
+Used OPA810, 10 Mohm input impedance, fixed transfer ratio of 1:10.
+
+![](schematic_rev1.png)
+
+![](rev1_opa810.jpg)
+
+Supply was +-12V with R1283C and 47µH inductors.
+Power usage 0.4 watts.
+
+Input divider was 1:10.
+Based on tests needed 2.3 pF capacitor at the tip when used with 2-6 pF trimmer on the PCB.
+
+Bandwidth in tests was 50MHz.
+Capacitors in parallel with R7 and R13 helped to raise it by a couple MHz.
+
+![](response_rev1_opa810.png)
+
+Also tested complex source termination with 68 pF capacitor C23 in parallel
+with 50 ohm output resistor. Improved high frequency performance very
+slightly but caused issues with response flatness.
+
+At 100MHz, response was -8dB.
+
+![](100MHz_rev1_opa810.png)
+
+CMRR was 80 dB at DC and 16 dB at 50 MHz.
+
+![](cmrr_rev1_opa810.png)
+
+Output noise level is 0.4 mVrms, 2.7 mVp-p.
+
+![](noise_rev1_opa810.png)
+
+Delay was 12.6 ns. (CH2 = reference, CH1 = probe out)
+
+![](delay_rev1_opa810.png)
+
+Tweezer tips were 140 mm long with angle 3 deg outwards, feels a bit too long and too wide apart.
+
+Soldered triaxial cable directly to solder mount BNC plug, split to USB supply
+cable from there and put adhesive heatshrink on it. Result was quite ugly.
+
+Proto with OPA659, 5/2021
+-------------------------
+
+Using rev 1 pcb, switched to OPA659 in SOT23-5 package.
+Triaxial cable terminated to Cinch 27-9020 clamped BNC plug.
+Works quite well but will need some padding around the cables to make them clamp better in place.
+
+![](rev1_opa659.jpg)
+
+Supply +- 6V with R1283C and 10 µH inductors. Power usage 1.37 watts. SOT23-5 opamps noticeably warm.
+
+Changed input divider to 1:21.4 to account for the smaller voltage range.
+Input impedance is 10 Mohm.
+Probe tip has 1.2 pF, PCB has 8-30pF trimmers.
+Added 300 ohm series resistor to tips to compensate for inductance.
+
+U3 stage has 470 ohm to 1000 ohm for 2.14x amplification, bringing the total ratio to 1:10.
+
+Complex termination C23 unassembled.
+
+Response quite flat to 60 MHz. At 100 MHz -20.13 dB, at 200 MHz -30 dB.
+
+![](response_rev1_opa659.png)
+
+CMRR was 80 dB at DC and 35 dB at 50 MHz. This seems better than the 15 dB CMRR specified for OPA659 at 50 MHz.
+
+![](cmrr_rev1_opa659.png)
+
+Noise was 0.8 mVrms, 4.8 mVp-p, about double the value for OPA810.
+On the other hand bandwidth is also over double.
+Increased noise could also be caused by the 2x amplification in the output stage.
+
+![](noise_rev1_opa659.png)
+
+Delay 9.2 ns. Waveform preserved much better than with OPA810 due to flatter response. (CH1 = reference, CH2 = probe out)
+
+![](delay_rev1_opa659.png)
+
+Shortened probe tips to 100 mm with angle of 3 deg inwards, feels a bit short.
+
+Test with 1 Mohm input impedance
+--------------------------------
+
+To reduce thermal noise, OPA659 proto was modified from 9.1 Mohm : 442 kohm divider to 910 kohm : 43 kohm divider.
+
+![](noise_rev1_opa659_1M.png)
+
+Output noise for 43 kohm divider was 0.74 mVrms. Difference to 442 kohm divider (0.78 mVrms) is very small.
+
+Expected thermal noise for 442 kohm divider impedance at 100 MHz bandwidth is 1.7 mVrms on output and for 43 kohm divider impedance 0.5 mVrms. For some reason observed reduction is only 0.040 mVrms.
+
+PSU ripple is 2.2 mVrms, 16 mVp-p on the OPA659 prototype and slightly larger on OPA810 prototype.
+Largest noise spike is 1.9 mV at 1.38 MHz operating frequency of R1283C.
+
+![](psu_ripple_rev1.png)
+
+OPA659 PSRR is 55 dB at 1.4 MHz, which should give about 0.014 mVrms combined noise on output.
+Measurements show 0.02 mVrms spike in output at 1.4 MHz.
+
+On scope the output noise looks quite wideband on FFT, but scope sensitivity is not high enough for accurate measurements. On spectrum analyzer the noise is wideband up to 150 MHz.
+
+Supplying opamps from batteries instead of R1283C lowers noise by about 20% to 0.6 mVrms.
+
+Based on OPA659 datasheet, input equivalent noise voltage for the first stage is
+sqrt(4*k*T*R + (Ibn * R)² + En²) = sqrt(712 nV²/Hz + 0.006 nV²/Hz + 8.9 nV²/Hz) which is 0.3 mVrms at 150 MHz bandwidth with 43 kohm divider, dominated by thermal noise in resistor. That should give 0.6 mVrms at output because of the 2x gain, which seems to agree with measurements. But then why doesn't 442 kohm divider give 10x more noise?
+
+Apparently because of https://en.wikipedia.org/wiki/Johnson%E2%80%93Nyquist_noise#Thermal_noise_on_capacitors
+The divider capacitors limit the noise bandwidth, even though the signal bandwidth is unaffected.
+For 20 pF capacitance on the lower side of the divider, this gives just 0.014 mVrms on input.
+Maybe the noise is rather caused by the high side resistor and capacitor?
+But even that gets just 0.058 mVrms.
+Also if the noise bandwidth was being limited, the measured noise sprectrum shouldn't go up to 150 MHz.
+
+It will be interesting to see how noise behaves when 10x gain mode is added.
+That would limit bandwidth to 20 MHz, but on the other hand the increased amplification could increase noise.
+
+Power supply filtering
+----------------------
+
+Revision 1 power supply filter had two stages of ferrite + 10µF capacitor.
+This filtered high-frequency noise well but let some of the 1.4 MHz switcher noise through.
+
+As a test, one of the ferrites was replaced with 4.7µH inductor to get the cutoff frequency lower.
+Based on calculations there will be some oscillation at around 50kHz, but the inductor ESR will limit that.
+Because the SMPS shouldn't emit noise at such low frequencies and that the OPA659 PSRR is quite good there, it should be ok.
+
+With two ferrites the ripple (20 MHz measurement bandwidth) was 3.6 mVp-p on +6V and 2.7 mVp-p on -6V.
+With second ferrite replaced with 4.7µH inductor, values were 11.0 mVp-p and 13.5 mVp-p.
+Not a good change.
+Output noise stayed roughly the same, validating the good PSRR of OPA659.
+
+It seems two ferrites is the best strategy.
+It should be used on input +5V rail also to avoid emitting noise to the triax cable.
+
+Searching for noise source
+--------------------------
+
+1. Buffer stage opamp inputs were shorted to ground to test for noise.
+Noise level did not change significantly.
+This means that most of the noise is not caused by the input thermal noise.
+
+2. The differential stage input resistors were moved to be from GND instead of
+first stage outputs. Noise was reduced from 0.75 mVrms to 0.65 mVrms.
+
+3. A 0.5 pF capacitor was added as C21 to bandlimit differential amp bandwidth.
+Noise was unaffected.
+
+4. R8 was shorted out, to short differential amp IN+ to GND.
+Noise was unaffected.
+
+5. R10 output offset resistor was disconnected.
+Noise was unaffected.
+
+6. The shorted-to-ground R13 was removed, changing the differential amp gain to 1.
+Noise was increased to 0.8 mVrms.
+
+7. R14 was shorted out, making the differential amp to simple unity gain buffer with 0 ohm feedback.
+Noise was reduced to 0.58 mVrms.
+
+8. Output 50 ohm resistor was connected between ground and output, to get a baseline noise reference.
+Noise was 0.32 mVrms with power off and 0.33 mVrms with power on and running through the triax.
+This matches the noise level of the oscilloscope when 50 ohm termination resistor is directly connected to input.
+
+9. Changes were reverted to normal, except 0.5pF was left in place and inputs were still shorted to GND.
+24 Mpts 1GSps capture was taken and FFT was calculated in octave to get more precise noise spectrum.
+With this wider capture bandwidth (extending further to low-freq noise below 100kHz), the RMS noise reported by scope was 1.73 mVrms, though for some reason the noise calculated from raw data is only 0.45 mVrms.
+Apparently Rigol DS1054Z performs some extremes-keeping decimation on the data and calculates RMS on the decimated values. To get correct RMS values it will have to be done on PC.
+
+![](noise_spectrum_rev1.png)
+![](noise_spectrum_opa659_spec.png)
+
+There are 3 opamps and output gain of 2.
+If the noise is uncorrelated, we can expect it to increase by 2 * sqrt(3) = 3.5x.
+Based on graph the base noise appears to be 4x larger than the single amp spec, which agrees with calculations.
+
+However there are some significant peaks in the spectrum. The largest are at 1.37 MHz, 2.74 MHz, 4.11 MHz, 5.48 MHz, 62.5 MHz, 250 MHz, 312 MHz, 438 MHz. Of these the first 4 are the harmonics of the SMPS frequency.
+250 MHz spike is probably caused by ADC interleaving of the oscilloscope.
+
+It is easier to evaluate the significance of the peaks by plotting the cumulative noise spectrum:
+
+![](noise_spectrum_rev1_cumulative.png)
+
+Based on the graph most of the total noise is caused by the wideband noise between 10 MHz and 100 MHz.
+Reducing the power supply spikes is desirable but will not have a huge effect.
+Improving the cooling of the opamps will probably help with noise also.
+
+---
+
+Design goals for revision 2
+---------------------------
+
+* Make tweezer tips detachable, using spring contacts to pass signal and ground.
+* Add pads for inductance compensation resistor to the tips.
+* Add 3.5 mm connector for connecting input directly without tweezer tips. Allows use of commonly available shielded audio cables.
+* One sided assembly, single PCB. PCB can be longer than currently.
+* Add 1x vs. 10x gain switch.
+* Use VSON package for OPA659 for better thermal conduction.
+
+Cable input option
+------------------
+
+Tweezer tips often provide the lowest capacitance measurement solution, because the capacitor can be very close to the tip. But for general usage spring hooks or 0.65 mm square pins can be more useful.
+
+To suit both cases, rev2 should have detachable tips and a connector for cable.
+A 3.5 mm audio connector can be used for the cable, because shielded audio cables are commonly available.
+Because of the short length (about 10 cm) the uncontrolled impedance does not matter at these frequencies.
+The capacitors at the tip of the cable must be selected to match cable capacitance.
+
+It will also be useful if normal oscilloscope probes can be connected to the input.
+This is possible if the impedance is close to 1 Mohm || 12 pF.
+
+The cable input should be protected against ESD and overvoltage up to some reasonable limit.
+The OPA659 input ESD resistors can handle up to 30 mA current, so the 499kohm series resistor
+should provide quite good protection.
+
+Tweezer tip attachment
+----------------------
+
+To work well, the tweezer tips must be held in place well, and always at the correct alignment so that the tip ends meet. A machine taper is commonly used for this purpose in e.g. drill presses. This can be emulated in 2D with the PCB tips and 3D printed enclosure.
+
+The tips have to be aligned both in angle and in insertion depth. For this purpose a notch can be added to the PCBs to lock them in place once fully inserted. The enclosure will have to flex a bit to account for the +- 0.2 mm dimension accuracy of the PCBs.
+
+I don't know how to choose the taper angle. 1.5 degrees per side seems to be used for metals, maybe I'll try 3 degrees per side at first.
+
+Enclosure design
+----------------
+
+IEC61010 requires enclosure to be UL94 V-1 rated. My 3D print supplier charges a bit more for such material, and it is only available in white color. The required thickenss for UL94 V-1 rating is 2 mm. To save on setup costs, I think I'll try to make the enclosure out of two identical halves. This means that one side will have unnecessary holes for switch and trimmers, but they can be covered by a label. Connectors must be aligned on centerline.
+
+Gain switch
+-----------
+
+The circuit is typical instrumentation amplifier configuration, where differential gain can be adjusted by adding a resistor network in negative feedback between the two front-end amplifiers. This needs just the addition of a switch and resistors so is a pretty cheap feature.
+
+The height from PCB surface to 3.5mm connector center is 2.3 mm. With a symmetric enclosure and 1.6 mm PCB, this means 8.2 mm from PCB surface to opposite side enclosure surface.
+
+There aren't many small SMD switches with these specs.
+But 78HF01GWRT seems suitable at 7.6 mm height.
+It also specifies a capacitance of 2 pF, which is acceptable for the 220 ohm impedance feedback node.
+
+Offset adjust
+-------------
+
+OPA659 can have up to +-5 mV input offset at room temperature.
+First revision had offset trimmer on output.
+This works, but it would cause a large shift in offset when gain is switched between 1x and 10x.
+
+Input offset adjust trimmer was added on positive input side.
+Leaving negative side with 0V offset allows single-ended use by touching only positive probe to signal.
+The small capacitance and resistance imbalance between positive and negative input will be trimmed out along with other inaccuracies.
+
+Trimmer wipers
+--------------
+
+Trimmer capacitors and potentiometers are arranged so that their wipers are at ground potential.
+This allows using conductive adjustment tools without disturbing the circuit operation.
+
+And exception is the input offset trimmer. 100nF capacitor was added to the wiper so that most noise
+is filtered out. X7R dielectric has some microphonic effect, but because there is 1:500 attenuation
+from offset adjust to input, its effect is small.
+
+Ferrite selection
+-----------------
+
+Rev1 prototype used MFBM1V1608-102-R ferrites. They have quite small suppression below 10 MHz.
+For example MMZ1608B601 would have much better filtering at 1 MHz.
+
+![](ferrite_comparison.png)
+

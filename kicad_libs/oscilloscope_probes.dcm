@@ -1,3 +1,13 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP Conn_Triaxial
+D triaxial connector
+F  ~
+$ENDCMP
+#
+$CMP OPA659DRB
+K single opamp
+F http://www.ti.com/lit/ds/symlink/opa659.pdf
+$ENDCMP
+#
 #End Doc Library

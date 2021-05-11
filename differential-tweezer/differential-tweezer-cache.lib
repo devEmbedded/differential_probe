@@ -1,92 +1,61 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Amplifier_Operational_OPA842xDBV
+# Connector_AudioJack4
 #
-DEF Amplifier_Operational_OPA842xDBV U 0 5 Y Y 1 F N
-F0 "U" -50 250 50 H V L CNN
-F1 "Amplifier_Operational_OPA842xDBV" -50 150 50 H V L CNN
-F2 "Package_TO_SOT_SMD:SOT-23-5" -100 -200 50 H I L CNN
-F3 "" 0 200 50 H I C CNN
-ALIAS MCP6401T-xOT MCP6001-OT MCP601-xOT OPA333xxDBV OPA340NA OPA376xxDBV TS881xLx TSV911xxLx OPA330xxDBV OPA356xxDBV LMH6702MF LMH6609MF TLV2371DBV OPA842xDBV OPA843xDBV OPA846xDBV LT6015xS5 OPA197xDBV OPA196xDBV LPV811DBV
-$FPLIST
- SOT?23*
-$ENDFPLIST
-DRAW
-P 4 0 1 10 -200 200 200 0 -200 -200 -200 200 f
-X V- 2 -100 -300 150 U 50 50 0 1 W
-X V+ 5 -100 300 150 D 50 50 0 1 W
-X ~ 1 300 0 100 L 50 50 1 1 O
-X + 3 -300 100 100 R 50 50 1 1 I
-X - 4 -300 -100 100 R 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# Connector_Conn_01x01_Female
-#
-DEF Connector_Conn_01x01_Female J 0 40 Y N 1 F N
-F0 "J" 0 100 50 H V C CNN
-F1 "Connector_Conn_01x01_Female" 0 -100 50 H V C CNN
+DEF Connector_AudioJack4 J 0 20 Y Y 1 F N
+F0 "J" 0 350 50 H V C CNN
+F1 "Connector_AudioJack4" 0 250 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
- Connector*:*
+ Jack*
 $ENDFPLIST
 DRAW
-A 0 0 20 901 -901 1 1 6 N 0 20 0 -20
-P 2 1 1 6 -50 0 -20 0 N
-X Pin_1 1 -200 0 150 R 50 50 1 1 P
+S -250 -200 -300 -300 0 1 10 F
+S 100 150 -250 -300 0 1 10 f
+P 4 0 1 10 0 -200 25 -225 50 -200 100 -200 N
+P 5 0 1 10 -225 -200 -200 -225 -175 -200 -175 100 100 100 N
+P 5 0 1 10 -75 -200 -50 -225 -25 -200 -25 -100 100 -100 N
+P 5 0 1 10 100 0 -100 0 -100 -200 -125 -225 -150 -200 N
+X ~ R1 200 -100 100 L 50 50 1 1 P
+X ~ R2 200 0 100 L 50 50 1 1 P
+X ~ S 200 100 100 L 50 50 1 1 P
+X ~ T 200 -200 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Conn_01x04_Male
+# Connector_Generic_Conn_01x01
 #
-DEF Connector_Conn_01x04_Male J 0 40 Y N 1 F N
-F0 "J" 0 200 50 H V C CNN
-F1 "Connector_Conn_01x04_Male" 0 -300 50 H V C CNN
+DEF Connector_Generic_Conn_01x01 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Generic_Conn_01x01" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
  Connector*:*_1x??_*
 $ENDFPLIST
 DRAW
-S 34 -195 0 -205 1 1 6 F
-S 34 -95 0 -105 1 1 6 F
-S 34 5 0 -5 1 1 6 F
-S 34 105 0 95 1 1 6 F
-P 2 1 1 6 50 -200 34 -200 N
-P 2 1 1 6 50 -100 34 -100 N
-P 2 1 1 6 50 0 34 0 N
-P 2 1 1 6 50 100 34 100 N
-X Pin_1 1 200 100 150 L 50 50 1 1 P
-X Pin_2 2 200 0 150 L 50 50 1 1 P
-X Pin_3 3 200 -100 150 L 50 50 1 1 P
-X Pin_4 4 200 -200 150 L 50 50 1 1 P
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -50 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Conn_Coaxial
+# Connector_TestPoint
 #
-DEF Connector_Conn_Coaxial J 0 40 Y N 1 F N
-F0 "J" 10 120 50 H V C CNN
-F1 "Connector_Conn_Coaxial" 115 0 50 V V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
+DEF Connector_TestPoint TP 0 30 N N 1 F N
+F0 "TP" 0 270 50 H V C CNN
+F1 "Connector_TestPoint" 0 200 50 H V C CNN
+F2 "" 200 0 50 H I C CNN
+F3 "" 200 0 50 H I C CNN
 $FPLIST
- *BNC*
- *SMA*
- *SMB*
- *SMC*
- *Cinch*
+ Pin*
+ Test*
 $ENDFPLIST
 DRAW
-A -2 0 71 1636 0 0 1 10 N -70 20 70 0
-A -1 0 71 0 -1638 0 1 10 N 70 0 -70 -20
-C 0 0 20 0 1 8 N
-P 2 0 1 0 -100 0 -20 0 N
-P 2 0 1 0 0 -100 0 -70 N
-X In 1 -200 0 100 R 50 50 1 1 P
-X Ext 2 0 -200 100 U 50 50 1 1 P
+C 0 130 30 0 1 0 N
+X 1 1 0 0 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
@@ -243,6 +212,91 @@ X 3 3 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Mechanical_MountingHole_Pad
+#
+DEF Mechanical_MountingHole_Pad H 0 40 N N 1 F N
+F0 "H" 0 250 50 H V C CNN
+F1 "Mechanical_MountingHole_Pad" 0 175 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ MountingHole*Pad*
+$ENDFPLIST
+DRAW
+C 0 50 50 0 1 50 N
+X 1 1 0 -100 100 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# Switch_SW_SPST
+#
+DEF Switch_SW_SPST SW 0 0 Y N 1 F N
+F0 "SW" 0 125 50 H V C CNN
+F1 "Switch_SW_SPST" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C -80 0 20 0 0 0 N
+C 80 0 20 0 0 0 N
+P 2 0 0 0 -60 10 60 70 N
+X A 1 -200 0 100 R 50 50 1 1 P
+X B 2 200 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# oscilloscope_probes_Conn_Triaxial
+#
+DEF oscilloscope_probes_Conn_Triaxial J 0 40 Y N 1 F N
+F0 "J" 150 100 50 H V C CNN
+F1 "oscilloscope_probes_Conn_Triaxial" 450 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ *BNC*
+ *SMA*
+ *SMB*
+ *SMC*
+ *Cinch*
+$ENDFPLIST
+DRAW
+A -25 -25 79 -1616 -1084 0 1 0 N -100 -50 -50 -100
+A -2 0 71 1636 0 0 1 10 N -70 20 70 0
+A -1 0 71 0 -1638 0 1 10 N 70 0 -70 -20
+A 0 0 112 -266 -634 0 1 0 N 100 -50 50 -100
+A 0 0 112 -265 1533 0 1 0 N 100 -50 -100 50
+C 0 0 20 0 1 8 N
+P 2 0 1 0 -100 0 -20 0 N
+P 2 0 1 0 0 -100 0 -70 N
+X In 1 -200 0 100 R 50 50 1 1 P
+X Ext 2 0 -200 100 U 50 50 1 1 P
+X ~ 3 0 200 87 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# oscilloscope_probes_OPA659DRB
+#
+DEF oscilloscope_probes_OPA659DRB U 0 5 Y Y 1 F N
+F0 "U" 0 250 50 H V L CNN
+F1 "oscilloscope_probes_OPA659DRB" 0 150 50 H V L CNN
+F2 "" -100 -200 50 H I L CNN
+F3 "" 150 150 50 H I C CNN
+$FPLIST
+ SOIC*3.9x4.9mm*P1.27mm*
+$ENDFPLIST
+DRAW
+P 4 0 1 10 -200 200 200 0 -200 -200 -200 200 f
+X NC 1 -100 100 100 D 50 50 1 1 N N
+X - 2 -300 -100 100 R 50 50 1 1 I
+X + 3 -300 100 100 R 50 50 1 1 I
+X V- 4 -100 -300 150 U 50 50 1 1 W
+X NC 5 0 100 100 D 50 50 1 1 N N
+X ~ 6 300 0 100 L 50 50 1 1 O
+X V+ 7 -100 300 150 D 50 50 1 1 W
+X NC 8 0 -100 100 U 50 50 1 1 N N
+X EP 9 0 -300 236 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # oscilloscope_probes_R1283
 #
 DEF oscilloscope_probes_R1283 U 0 40 Y Y 1 F N
@@ -267,31 +321,46 @@ X Vfb1 9 350 250 100 L 50 50 0 0 P
 ENDDRAW
 ENDDEF
 #
-# power_+12V
+# power_+5V
 #
-DEF power_+12V #PWR 0 0 Y Y 1 F P
+DEF power_+5V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power_+12V" 0 140 50 H V C CNN
+F1 "power_+5V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
 P 2 0 1 0 -30 50 0 100 N
 P 2 0 1 0 0 0 0 100 N
 P 2 0 1 0 0 100 30 50 N
-X +12V 1 0 0 0 U 50 50 1 1 W N
+X +5V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power_-12V
+# power_+6V
 #
-DEF power_-12V #PWR 0 0 Y Y 1 F P
+DEF power_+6V #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "power_+6V" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +6V 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# power_-6V
+#
+DEF power_-6V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 100 50 H I C CNN
-F1 "power_-12V" 0 150 50 H V C CNN
+F1 "power_-6V" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
 P 6 0 1 0 0 0 0 50 30 50 0 100 -30 50 0 50 F
-X -12V 1 0 0 0 U 50 50 0 0 W N
+X -6V 1 0 0 0 U 50 50 0 0 W N
 ENDDRAW
 ENDDEF
 #

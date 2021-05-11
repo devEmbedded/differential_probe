@@ -1,0 +1,127 @@
+* OPA659
+*****************************************************************************
+* (C) Copyright 2009 Texas Instruments Incorporated. All rights reserved.     *****************************************************************************
+** This model is designed as an aid for customers of Texas Instruments.    
+** TI and its licensors and suppliers make no warranties, either expressed  
+** or implied, with respect to this model, including the warranties of                      
+** merchantability or fitness for a particular purpose. The model is   
+** provided solely on an "as is" basis. The entire risk as to its quality                                 
+** and performance is with the customer         
+*
+*****************************************************************************
+*
+*  Header Modified on 2009-05-13
+*
+*****************************************************************************
+*
+* Released by: Analog eLab Design Center, Texas Instruments Inc.
+* Part:        OPA659
+* Date:        2009-03-10
+* Model Type:  PSpice
+* Simulator:   PSpice 16.0.0.p001
+* Datasheet:   Revised March 2009
+*
+*****************************************************************************
+*  
+* OPA659 SUBCIRCUIT
+* HIGH SPEED MONOLITHIC OPERATIONAL AMPLIFIER 
+* THIS MODEL SIMULATES TYPICAL VALUES FOR THE FOLLOWING:
+* SETTLING TIME, OUTPUT VOLTAGE LIMIT, INPUT VOLTAGE NOISE, INPUT BIAS CURRENT,
+* TYPICAL VALUES FOR INPUT OFFSET VOLTAGE AND OFFSET BIAS CURRENT,
+* CURRENT DRAW FROM POWER SUPPLY, OUTPUT IMPEDANCE AND LOADING EFFECTS
+* BANDWIDTH IS RIGHT IN GAINS OF +1V/V AND +2V/V 
+* SLEW RATE IS SLOW FOR THE RISING EDGE AND FASTER FOR THE FALLING EDGE
+* THIS MODEL WILL NOT PROVIDE ACCURATE SIMULATION OF: 
+* CMRR AND PSRR, INPUT CURRENT NOISE, DISTORTION, INPUT OFFSET, OPEN LOOP GAIN
+*$
+*
+.SUBCKT OPA659     IN+ IN- Vcc+ Vcc- OUT
+*
+J1     86 N4 0129  NFET 16
+J2     83 82 79    NFET 16
+RDEG1  0129 0187 10
+RDEG2  79   0187 10
+Q4   HIZ VREF 83 PNP 2
+Q3   20  VREF 86 PNP 2
+Q6   HIZ 20 22 NPN 1
+Q5   20  22 74 NPN 4
+Q7   22  22 76 NPN 4
+RM1  74  Vcc- 50
+RM2  76  Vcc- 50
+Cc   HIZ Vcc- 2e-12
+IB1  IN+ N4 DC 10e-12
+IB2  82  0 DC 11e-12
+Voff IN- 82 DC 200e-6
+
+* Input voltage noise source
+Rinoise     N1 0  536
+VCCVS1_in   N1 0  0
+HCCVS1      IN+ N4 VCCVS1_in   536
+
+* HIGH FREQUENCY SHAPING *
+EFRQS  077 0 HIZ 0 1
+RFREQS 8  71 25
+LFREQS 077 8 1.5e-9
+CFREQS 71  0 3.5e-12
+C0     IN- 0 2e-12
+
+* OUTPUT *
+Q2   71  71 46 PNP 3
+Q8 71  71 18 NPN 3
+Q9   Vcc+ 46 15 NPN 12
+Q10  Vcc- 18 43 PNP 12
+RBAL1 15 69 1
+RBAL2 43 69 1
+
+* COMPLEX OUTPUT IMPEDANCE *
+RO2 69 0139 5
+RO1 69 0143 5
+CO1 0143 OUT 8e-12
+LO1 0139 OUT 1e-9
+
+
+* Biasing
+*V1    Vcc+ VREF DC 3.29
+V1     Vcc+ VREF DC 2
+I13    Vcc+ 0121 DC 1e-3
+VCONT  0121 Vcc- DC 0
+FDIFFP 0187 0173 VCONT  8
+R16    0173 Vcc- 312
+FCASC2 090 83 VCONT  8
+FCASC1 092 86 VCONT  8
+R18    Vcc+ 090 150
+R17    Vcc+ 092 150
+FEF2   18 Vcc- VCONT  3.35
+FEF1   Vcc+ 46 VCONT  3.35
+ECMRR  070 0 POLY(1) IN+ IN-  0  500e-3  500e-3
+GCMRR  065 0 070 Vcc- -10e-9
+RCMRR1 065 0 1e3
+RCMRR2 065 0125 3e3
+CCMRR  070 0125 100e-15
+*
+GEPSRR 058 0 Vcc+ Vcc- 100e-9
+RPSRR3 058 0141 3e3
+RPSRR2 058 0180 3e3
+RPSRR1 058 0    1e3
+CPSRR2 0141 Vcc- 1e-9
+CPSRR1 0180 Vcc+ 100e-12
+
+* MODELS *
+.MODEL NFET NJF(VTO=-2 BETA=100E-6 IS=100E-16 RS=25 RD=25 AF=1 KF=4.0000E-17)
+
+.MODEL NPN NPN AF=1 BF=100 BR=1 CJC=0 CJE=0 CJS=0 EG=1.11 FC=0.5 GAMMA=1E-11
++IKF=1E9 IKR=1E9 IRB=1E9 IS=1E-16 ISC=0 ISE=0 ISS=0 ITF=0  MJC=0.33
++MJE=0.33 NC= 2 NE=1.5 NF=1 NK=0.5 NR=1 PTF=0 QCO=0 
++RB=240 RBM=190 RC=200 RCO=0 RE=0 KF=0.5e-14
++TF=0 TR=0 VAF=1E9 VAR=1E9 VJC=0.75 VJE=0.75 VO=10 VTF=1E9 
++XCJC=1 XCJC2=1 XTB=0 XTF=0 XTI=3
+
+.MODEL PNP PNP AF=1 BF=100 BR=1 CJC=0 CJE=0 CJS=0 EG=1.11 FC=0.5 GAMMA=1E-11
++IKF=1E9 IKR=1E9 IRB=1E9 IS=1E-16 ISC=0 ISE=0 ISS=0 ITF=0  MJC=0.33
++MJE=0.33 NC= 2 NE=1.5 NF=1 NK=0.5 NR=1 PTF=0 QCO=0 
++RB=240 RBM=190 RC=200 RCO=0 RE=0 KF=0.5e-14
++TF=0 TR=0 VAF=1E9 VAR=1E9 VJC=0.75 VJE=0.75 VO=10 VTF=1E9 
++XCJC=1 XCJC2=1 XTB=0 XTF=0 XTI=3
+
+.ENDS  OPA659
+*$
