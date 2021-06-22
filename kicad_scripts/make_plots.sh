@@ -10,8 +10,8 @@ BASE=${PROJECT%.*}
 BOARD=$BASE.kicad_pcb
 TWOLAYER=$( grep -q In1.Cu $BOARD; echo $? )
 
-python $SCRIPT_DIR/plot_assembly.py $BOARD
-python $SCRIPT_DIR/plot_gerbers.py $BOARD $TWOLAYER
+python3 $SCRIPT_DIR/plot_assembly.py $BOARD
+python3 $SCRIPT_DIR/plot_gerbers.py $BOARD $TWOLAYER
 
 gerbv -D 1200 -a -x png -o images/${BASE}_top.png \
     -f '#000000ff' gerbers/$BASE.TXT \

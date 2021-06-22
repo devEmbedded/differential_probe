@@ -1,0 +1,26 @@
+# With 1.5 pF tip capacitor
+# Measured with NanoVNA v2 clone.
+# Frequency     Single-ended impedance    Differential impedance
+
+10      9.98e6      19.9e6
+20      9.96e6      19.8e6
+50      9.91e6      19.6e6
+100     9.81e6      19.2e6
+200     9.64e6      18.5e6
+500     9.13e6      16.7e6
+1e3     8.41e6      14.3e6
+2e3     7.26e6      11.1e6
+5e3     5.15e6      6.64e6
+10e3    3.47e6      3.98e6
+20e3    2.1e6       2.2e6
+50e3    959e3       948e3
+100e3   504e3       485e3
+200e3   258e3       246e3
+500e3   105e3       99e3
+1e6     55000       53000
+2e6     29700       31822
+5e6     10000       9940
+10e6    5058        5009
+20e6    2640        2413
+50e6    1040        1086
+100e6   520         636

@@ -873,6 +873,13 @@ divider capacitor embedded in probes. For basic protection against that, a PCB s
 The nominal distance is 0.15 mm, actual manufactured distance is 0.164 mm.
 This was tested to have a breakdown voltage of 800 VDC on one sample and 1200 VDC on another sample. Some spark damage from test sparks if visible in the image.
 
+Thoughts on automatic tuning
+----------------------------
+
+It would be nice if a microcontroller could automatically adjust the tuning resistors & capacitors instead of having to do it manually.
+
+Looks like all digital potentiometers chips have >= 50pF capacitance, which makes this pretty difficult. One option could be to use NTC resistors and a heater.
+
 Design goals for revision 3
 ===========================
 

@@ -1815,4 +1815,24 @@ Wire Wire Line
 Wire Wire Line
 	8050 4000 8050 4200
 Connection ~ 8050 4200
+$Comp
+L Device:R R?
+U 1 1 614293EE
+P 6250 5100
+F 0 "R?" H 6320 5146 50  0000 L CNN
+F 1 "N/A" H 6320 5055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6180 5100 50  0001 C CNN
+F 3 "~" H 6250 5100 50  0001 C CNN
+F 4 "Panasonic" H 6250 5100 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED111V" H 6250 5100 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 6250 5100 50  0001 C CNN "Notes"
+	1    6250 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 4950 6250 4750
+Connection ~ 6250 4750
+Wire Wire Line
+	6250 5250 6250 5450
+Connection ~ 6250 5450
 $EndSCHEMATC

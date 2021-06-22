@@ -5,6 +5,11 @@ D triaxial connector
 F  ~
 $ENDCMP
 #
+$CMP MCP4461
+D Digital potentiometer, 256 position, 4 output, I2C interface
+K digital potentiometer
+$ENDCMP
+#
 $CMP OPA659DRB
 K single opamp
 F http://www.ti.com/lit/ds/symlink/opa659.pdf
