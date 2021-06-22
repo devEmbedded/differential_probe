@@ -467,10 +467,7 @@ The probe tip inductance will cause overshoot in response, which can be compensa
 
 ![](step_response_rev2_0ohm.png)
 
-50 ohm series resistor at tip makes no difference:
-
-![](step_response_rev2_50ohm.png)
-
+50 ohm series resistor at tip makes no difference.
 Jumper between ground planes of the tips does not make a difference either:
 
 ![](step_response_rev2_jumper.png)
@@ -727,6 +724,154 @@ A test was made by moving rev2 resistors to be close to second stage amplifier.
 ![](cmrr_rev2_u4_res.png)
 
 No significant difference. The graph is smoother but that is probably just because I enabled averaging in nanovna-saver. However intuitively it feels better to have the 110 ohm resistors next to U4, so I think I'm going to make that change. At least it is not worse.
+
+Estimating required filter capacitance
+--------------------------------------
+
+There are two stages of RC lowpass filter, giving 12 dB per octave slope.
+
+    Frequency    Att. w/ 3pF   Excess gain w/ 3pF
+     50 MHz         0.4 dB          1.0 dB
+    100 MHz         1.4 dB          2.2 dB
+    150 MHz         2.9 dB          4.6 dB
+    200 MHz         4.6 dB          5.0 dB
+
+From this the target attenuation can be calculated as the sum, and suitable capacitance can be selected. The online tool http://sim.okawa-denshi.jp/en/CRlowkeisan.htm was used to calculate the responses.
+
+    Frequency    Target att.      Att. w/ 5.6pF
+     50 MHz         1.4 dB          1.2 dB
+    100 MHz         3.6 dB          4.1 dB
+    150 MHz         7.5 dB          7.5 dB
+    200 MHz         9.6 dB         10.7 dB
+
+Based on this, 5.6 pF capacitor in each stage should flatten the response quite well, and provide a clean roll-off above 200 MHz. Trying it out:
+
+![](response_rev2_5p6.png)
+
+Better, not perfect.
+
+Turns out that there is inherent limit to low-passing using capacitors in the feedback path of non-inverting amplifier: the gain bottoms out at 0 dB, and the output stage only has 6 dB of gain to start with. The input stage has 20 dB, but only in 10x mode which has a low bandwidth of 20 MHz anyway.
+
+This seems to explain the results, as the gain of the negative side is lower:
+
+![](response_rev2_neg_5p6.png)
+
+This also explains part of the poor CMRR in high frequencies. Perhaps adding a 5.6 pF capacitor in parallel with R20 will help. Blue curve is positive side response, yellow curve is negative side response:
+
+![](response_rev2_5p6_posneg.png)
+
+This also improved CMRR by about 6 dB to 26 dB in the 50 to 100MHz region. This is consistent with the 0.3 dB observed difference in pos/neg gains.
+
+![](cmrr_rev2_5p6_posneg.png)
+
+However it caused some weird oscillation on power-up. I think 5.6 pF is probably excessive in the feedback path. Time to run some simulations.
+
+Even adding stray capacitances here and there in simulation does not accurately reproduce the gain bump. The tip inductance matches simulations and causes the resonance peak at around 400 MHz.
+
+Going to try again with 3pF at each feedback path and also in parallel with R20.
+
+![](response_rev2_3p_posneg.png)
+
+Adding 30 pF to ground after the output 50 ohm resistor:
+
+![](response_30pF_output.png)
+
+That caused a weird dip in the response at 40 MHz, perhaps because of loading the output opamp too much. Taking out the 30 pF and trying 6.2 pF for all four capacitors:
+
+![](response_rev2_6p2.png)
+
+![](cmrr_rev2_6p2.png)
+
+That's good! Looks like 6.0 pF might be the optimal value for this PCB, but that will have to be retested with the rev3 PCB.
+
+For 1x gain 1 dB bandwidth is around 100 MHz and 3 dB bandwidth is 300 MHz.
+
+Testing with 10x gain (blue = diff. gain, yellow = common mode gain):
+
+![](response_rev2_gain10x_6p2.png)
+
+For 10x gain 1 dB bandwidth is about 10 MHz and 3 dB bandwidth is about 20 MHz.
+
+
+
+Power-up oscillation
+--------------------
+
+Sometimes the DC-DC undervoltage limit activates repeatedly on power-up, causing oscillation at around 100 Hz frequency. This seems to happen especially with current limited lab PSUs.
+
+Yellow trace is system output (0 = both +6V and -6V are ok), blue trace is +5V rail, purple trace is current on +5V rail. Rev 2 start with lab PSU with limit set to 500 mA and output capacitors at 0:
+
+![](powerup_lab_psu.png)
+
+Start when lab PSU output capacitors are already charged and cable is then connected:
+
+![](powerup_lab_psu_cable.png)
+
+So far seems reasonable, when rise time is long the DC-DC repeatedly tries to start and ends up in UVLO when soft-start period ends. Current usage stays within expected limits.
+
+But with the extra ferrites in rev 2.5 it somehows enters oscillation where it draws over 1 A in pulses:
+
+![](powerup_lab_psu_cable_rev2_5.png)
+
+Here yellow is output, cyan is +5V at USB connector, blue trace is +5V over DC-DC input capacitor, purple is current on +5V line:
+
+![](powerup_rev2_5_drop.png)
+
+Looks like the combined drop over the three ferrites (two on +5V and one on GND, total 1.2 ohms) is just too much for reliable start at UVLO minimum voltage. To output the 1.5 W at 2.2 V, it apparently requires over 1A input current. The total resistance from input 5V is 2 ohms with the poor quality test cabling. This is enough to cause the voltage to drop below UVLO again.
+
+Adding RC delay (1Mohm & 1µF) to the CE pin does seem to help a little, but does not completely fix it.
+
+There is 2x 10µF capacitors close to DC-DC chip which should provide enough decoupling, with 1A inductor current the voltage ripple should be around 100 mV.
+
+Looks like the high ESR ferrites also have a quite low saturation current so they are not much use at 100+mA anyway.
+
+![](ferrite_dc_bias.png)
+
+It could be good to use a lower series resistance ferrite. MPZ1608B471 would be good with 0.15 ohm ESR and 70 ohm impedance at 1 MHz. but it is currently out of stock. BLM18KG102 has 0.2 ohm ESR & 39 ohm impedance at 1 MHz and MMZ1608B221CTAH0 about the same. ASMPH-0603-1R inductor is also worth a try, at least it specifies a saturation current and if it meets its spec, should give 8 ohms at 1.4 MHz.
+
+Ground loop resonance
+---------------------
+
+Some weird bump in gain at 40 MHz has been visible in several graph. That turned out to depend on the area of the cable loop between the probe tips and the oscilloscope input, and how much metal was inside it. For some reason the effect was much more noticeable with an oscilloscope than with NanoVNA.
+
+The resonance was caused by the triaxial cable common mode inductance.
+The inductance was measured as 1.45µH when cable is on wooden table in a circle.
+Input capacitance of probes was measured as 3.5 pF each side to GND (2 pF capacitor and parasitics).
+This would nominally give resonance at 50 MHz, probably some small parasitic effects explain the difference.
+
+In any case, what happens is that at higher frequencies, the ground voltage at the amplifier fluctuates with the input signal, because the common mode inductance blocks the current. This is actually beneficial for common mode rejection, as it means that the common mode voltage at amplifier stays close to 0 at high frequencies. However, it becomes a problem when there is resonance, because it causes the amplifier common mode voltage raise higher than the input signal common mode actually is. This increases the gain of positive side and decreases gain of negative side:
+
+![](gnd_resonance_posneg.png)
+
+A ferrite around the triaxial cable appears to eliminate the problem:
+
+![](gnd_resonance_ferrite_place.png)
+
+It also improves CMRR:
+
+![](gnd_resonance_cmrr.png)
+
+Tweezer probe input impedance
+-----------------------------
+
+With 2.0 pF tip capacitor, the total input capacitance was measured as 3.5 pF using NanoVNA.
+The parasitic capacitance of the trace between tip and amplifier contact was measured as 9 pF.
+The parasitic inductance of the loop formed by two tweezer tips was measured as 160 nH.
+
+This causes oscillation at about 300 MHz. Because parasitics are high in relation to the actual component values it is hard to make very accurate calculations. Nominally 500 ohms series resistor is needed to fully dampen the oscillation, but in practice 110 ohms on each side seems to be enough.
+
+The series capacitor should be 1.5 pF for the nominal 20 pF amplifier capacitance, 1:20 ratio and 9 pF parasitic capacitance. This should give about 3.0 pF probe tip capacitance.
+
+Tweezer probe ESD protection
+----------------------------
+
+Even though the amplifier itself has ESD protection, there is some risk of ESD damage to the
+divider capacitor embedded in probes. For basic protection against that, a PCB spark gap was added:
+
+![](sparkgap.jpg)
+
+The nominal distance is 0.15 mm, actual manufactured distance is 0.164 mm.
+This was tested to have a breakdown voltage of 800 VDC on one sample and 1200 VDC on another sample. Some spark damage from test sparks if visible in the image.
 
 Design goals for revision 3
 ===========================
