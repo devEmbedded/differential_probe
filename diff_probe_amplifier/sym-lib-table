@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name oscilloscope_probes)(type Legacy)(uri ${KIPRJMOD}/../kicad_libs/oscilloscope_probes.lib)(options "")(descr ""))
+)

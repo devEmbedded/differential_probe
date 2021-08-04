@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name oscilloscope_probes)(type Legacy)(uri /home/petteri/gitrepos/oscilloscope-probes/kicad_libs/oscilloscope_probes.lib)(options "")(descr ""))
-)

@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name oscilloscope-probes)(type KiCad)(uri ${KIPRJMOD}/../kicad_libs/oscilloscope-probes.pretty)(options "")(descr ""))
-)
