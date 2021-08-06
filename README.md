@@ -9,6 +9,13 @@ be chosen to fit the desired voltage range and connection type.
 Currently this project is still in development. While the prototype revisions
 work well, they are still being redesigned for improvements.
 
+Files
+=====
+
+* [Design notes](design_notes/design_notes.md)
+* [Schematics](diff_probe_amplifier/images/diff_probe_amplifier.pdf)
+* [User manual](user_manual/DEDP-100_User_Manual.pdf)
+
 License
 =======
 
