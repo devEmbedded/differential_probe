@@ -890,7 +890,40 @@ Design goals for revision 3
 * Less short-circuit prone footprint for R1283
 * Smaller value for CMRR adjust trimmer to allow more precise adjustment.
 
+![](schematic_rev3.png)
 
+Revisiting power supply noise issue
+-----------------------------------
+
+Revision 3 did not improve power supply noise.
+While the fundamental frequency square wave is now fixed, there are new spikes.
+These seem to be a few cycles of oscillation at about 180 MHz after each switching of the DC-DC converter.
+
+Because PCB layout, split GND plane and ferrite changes were made at once, this will require more analysis to determine what causes the difference.
+
+Blue trace is output from BNC connector, yellow is voltage over C12:
+
+![](noise_rev3_initial.png)
+
+To determine whether the noise is actually coupled through the power rails, the +6/-6V rails were fed separately and 50 ohm resistors were placed as load on the DC-DC converter output. Noise on output BNC remained the same:
+
+![](noise_rev3_separate_power.png)
+
+Thus the noise isn't actually on the +-6V rails, but is coupled by some other mechanism. Next, +5V feed through the triax was disconnected and fed directly to PCB. Noise still remained the same.
+
+Near-field EMI measurements suggest that the problem could be some kind of resonance at 180 MHz in the DC-DC output filter. Replacing L5/L6/L7/L8 with 1 ohm resistors did not improve results.
+
+Shorting out L9 made no difference either.
+
+Replacing ferrites from BLM18KG102SN1D back to MMZ1608B601CTAHG used in rev 2.5 made no difference.
+
+Maybe the amplifier is unstable at 180 MHz?
+
+![](response_rev3.png)
+
+No, does not appear to be that either.
+
+Maybe there is some critical difference in the PCB layout? Very hard to say.
 
 
 
