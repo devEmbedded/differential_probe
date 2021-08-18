@@ -924,10 +924,56 @@ Maybe the amplifier is unstable at 180 MHz?
 No, does not appear to be that either.
 
 Maybe there is some critical difference in the PCB layout? Very hard to say.
+The noise is near the sensitivity limit of my scope, so I checked with an old analog spectrum analyzer.
+Turns out the spikes are actually at about 350 MHz, and I was getting some aliasing with the scope - no wonder at 500 MSps sampling. At 1 GSps sampling I get the real shape:
 
+![](rev3_spikes.png)
 
+Rechecking the amplifier response with wider bandwidth (blue = negative side, yellow = positive side amplifier):
 
+![](response_rev3_wide.png)
 
+No, still does not seem unstable.
+
+Continuing testing with the spectrum analyzer.
+Rev3 shows a clear bump at around 350 MHz when measuring with near field probe above the DC-DC portion.
+On rev2.5 this is about 20 dB lower.
+
+After studying rev2.5 vs. rev3 layouts, there is a difference in that rev2.5 had a ground plane right below the DC-DC converter on layer 2. Apparently this made enough of a difference to the resonance of the parasitic inductances.
+
+A snubber seems to improve things, but to avoid extra components maybe it is easier to fix in the layout.
+Also switching the NSR05T30 (80pF) diodes to a lower capacitance version like SBR1A20T5 would be a good idea.
+
+Trimmer potentiometer longevity
+-------------------------------
+While the TC33X series trimmers are lovely small, they are kind of annoying to adjust. Also they are rated for only 20 operational cycles.
+
+Bourns 3314 series has a 100 cycle rating and is also sealed against dust.
+
+Cable input series resistor
+---------------------------
+
+The shielded input cables will have some common mode inductance, which can cause resonance. There are two ways that can be used to avoid this: series resistors, or ferrite around the cable. Both ways act by damping the frequency response at higher frequencies.
+
+A series of tests were performed to see what is most effective. MMCX to 0.6mm square pin cables were used for the tests, with rev 3 amplifier PCB. The cables were connected to pin header soldered to BNC connector, with parallel 50 ohm termination at that point. The BNC cable was fed from NanoVNA v2.
+
+Initial situation, with 50 ohm series resistors on amplifier PCB, about 15 dB resonance at 310 MHz, but quite flat up to that point:
+
+![](cable_input_50ohm.png)
+
+Adding Fair-Rite 2631250202 ferrites near the amplifier end of each input coaxial cable removes the resonance but also causes a small droop in the response. The same beads near the input end of the cables caused a larger droop.
+
+![](cable_input_ferrite_near_amp.png)
+
+No ferrites but 110 ohm input resistors on amplifier PCB:
+
+![](cable_input_110ohm.png)
+
+No ferrites but 220 ohm input resistors on amplifier PCB:
+
+![](cable_input_220ohm.png)
+
+It appears that the input resistors are unable to remove the resonance. That is probably because they are only on signal lines, while most of the resonance is common-mode on the shield. Small ferrites are the best solution.
 
 
 
