@@ -5,59 +5,20 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Differential oscilloscope probe"
-Date "2021-06-04"
-Rev "3"
+Date "2021-08-20"
+Rev "4"
 Comp "devEmbedded"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Device:R R12
-U 1 1 5FFC2685
-P 4300 4500
-F 0 "R12" H 4370 4546 50  0000 L CNN
-F 1 "487k" H 4370 4455 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 4500 50  0001 C CNN
-F 3 "~" H 4300 4500 50  0001 C CNN
-	1    4300 4500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5100 4300 5000 4300
 Wire Wire Line
 	5100 6100 5000 6100
 Wire Wire Line
 	5000 4300 5000 4750
-$Comp
-L Device:R R19
-U 1 1 5FFCB3C4
-P 6500 6000
-F 0 "R19" V 6385 6000 50  0000 C CNN
-F 1 "110" V 6294 6000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6430 6000 50  0001 C CNN
-F 3 "~" H 6500 6000 50  0001 C CNN
-F 4 "Panasonic" H 6500 6000 50  0001 C CNN "Mfg"
-F 5 "ERA-3AED111V" H 6500 6000 50  0001 C CNN "Mfg Part No"
-F 6 "0.5%, 25ppm/K" H 6500 6000 50  0001 C CNN "Notes"
-	1    6500 6000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R18
-U 1 1 5FFCCE21
-P 6500 4200
-F 0 "R18" V 6707 4200 50  0000 C CNN
-F 1 "110" V 6616 4200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6430 4200 50  0001 C CNN
-F 3 "~" H 6500 4200 50  0001 C CNN
-F 4 "Panasonic" H 6500 4200 50  0001 C CNN "Mfg"
-F 5 "ERA-3AED111V" H 6500 4200 50  0001 C CNN "Mfg Part No"
-F 6 "0.5%, 25ppm/K" H 6500 4200 50  0001 C CNN "Notes"
-	1    6500 4200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	6950 6200 6950 6000
 Wire Wire Line
@@ -66,31 +27,6 @@ Wire Wire Line
 	7250 5000 6950 5000
 Wire Wire Line
 	6950 5000 6950 4200
-$Comp
-L Device:R R21
-U 1 1 5FFCF65A
-P 7500 6000
-F 0 "R21" V 7707 6000 50  0000 C CNN
-F 1 "220" V 7616 6000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7430 6000 50  0001 C CNN
-F 3 "~" H 7500 6000 50  0001 C CNN
-F 4 "Panasonic" H 7500 6000 50  0001 C CNN "Mfg"
-F 5 "ERA-3AED221V" H 7500 6000 50  0001 C CNN "Mfg Part No"
-F 6 "0.5%, 25ppm/K" H 7500 6000 50  0001 C CNN "Notes"
-	1    7500 6000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:C C19
-U 1 1 5FFCFCEA
-P 7500 6200
-F 0 "C19" V 7660 6200 50  0000 C CNN
-F 1 "6pF" V 7751 6200 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 7538 6050 50  0001 C CNN
-F 3 "~" H 7500 6200 50  0001 C CNN
-	1    7500 6200
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	7350 6200 6950 6200
 Wire Wire Line
@@ -107,20 +43,6 @@ Wire Wire Line
 Wire Wire Line
 	8050 6200 8050 6000
 Connection ~ 8050 6000
-$Comp
-L Device:R R20
-U 1 1 5FFD20E6
-P 7500 4200
-F 0 "R20" V 7385 4200 50  0000 C CNN
-F 1 "220" V 7294 4200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7430 4200 50  0001 C CNN
-F 3 "~" H 7500 4200 50  0001 C CNN
-F 4 "Panasonic" H 7500 4200 50  0001 C CNN "Mfg"
-F 5 "ERA-3AED221V" H 7500 4200 50  0001 C CNN "Mfg Part No"
-F 6 "0.5%, 25ppm/K" H 7500 4200 50  0001 C CNN "Notes"
-	1    7500 4200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	7350 4200 6950 4200
 Connection ~ 6950 4200
@@ -133,56 +55,8 @@ Wire Wire Line
 	6650 4200 6950 4200
 Wire Wire Line
 	6950 6000 6650 6000
-$Comp
-L Device:R_POT_TRIM RV1
-U 1 1 5FFC2E47
-P 4300 5050
-F 0 "RV1" H 4230 5096 50  0000 R CNN
-F 1 "30k" H 4230 5005 50  0000 R CNN
-F 2 "Potentiometer_SMD:Potentiometer_Bourns_TC33X_Vertical" H 4300 5050 50  0001 C CNN
-F 3 "~" H 4300 5050 50  0001 C CNN
-F 4 "Bourns" H 4300 5050 50  0001 C CNN "Mfg"
-F 5 "TC33X-2-303E" H 4300 5050 50  0001 C CNN "Mfg Part No"
-	1    4300 5050
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Device:R R13
-U 1 1 5FFC6B30
-P 4300 5550
-F 0 "R13" H 4230 5504 50  0000 R CNN
-F 1 "487k" H 4230 5595 50  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 5550 50  0001 C CNN
-F 3 "~" H 4300 5550 50  0001 C CNN
-	1    4300 5550
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	5000 6100 5000 5450
-$Comp
-L oscilloscope_probes:R1283 U1
-U 1 1 600163B0
-P 4200 1750
-F 0 "U1" H 4050 1500 50  0000 R CNN
-F 1 "R1283K001C" H 4350 1400 50  0000 R CNN
-F 2 "Package_DFN_QFN:DFN-12-1EP_3x4mm_P0.5mm_EP1.7x3.3mm" H 3450 1700 50  0001 C CNN
-F 3 "" H 3450 1700 50  0001 C CNN
-	1    4200 1750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:L L3
-U 1 1 60016B32
-P 4650 900
-F 0 "L3" V 4840 900 50  0000 C CNN
-F 1 "4.7µH" V 4749 900 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4650 900 50  0001 C CNN
-F 3 "~" H 4650 900 50  0001 C CNN
-F 4 "Murata" H 4650 900 50  0001 C CNN "Mfg"
-F 5 "DFE201612E-4R7M=P2" H 4650 900 50  0001 C CNN "Mfg Part No"
-	1    4650 900 
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	4500 900  4150 900 
 Wire Wire Line
@@ -192,69 +66,6 @@ Wire Wire Line
 Connection ~ 4150 900 
 Wire Wire Line
 	4150 900  4000 900 
-$Comp
-L Device:D_Schottky_ALT D2
-U 1 1 6001B522
-P 5050 900
-F 0 "D2" H 5050 684 50  0000 C CNN
-F 1 "NSR05T30" H 5050 775 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-523" H 5050 900 50  0001 C CNN
-F 3 "~" H 5050 900 50  0001 C CNN
-F 4 "ON" H 5050 900 50  0001 C CNN "Mfg"
-F 5 "NSR05T30XV2T5G" H 5050 900 50  0001 C CNN "Mfg Part No"
-	1    5050 900 
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C5
-U 1 1 6001F562
-P 6000 2150
-F 0 "C5" H 6115 2196 50  0000 L CNN
-F 1 "68pF" H 6115 2105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6038 2000 50  0001 C CNN
-F 3 "~" H 6000 2150 50  0001 C CNN
-F 4 "Stackpole" H 6000 2150 50  0001 C CNN "Mfg"
-F 5 "CML0603C0G101JT50V" H 6000 2150 50  0001 C CNN "Mfg Part No"
-F 6 "NP0" H 6000 2150 50  0001 C CNN "Notes"
-	1    6000 2150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R6
-U 1 1 6001CEAD
-P 6450 1500
-F 0 "R6" V 6243 1500 50  0000 C CNN
-F 1 "1k" V 6334 1500 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6380 1500 50  0001 C CNN
-F 3 "~" H 6450 1500 50  0001 C CNN
-	1    6450 1500
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R2
-U 1 1 6001C7D7
-P 5550 1200
-F 0 "R2" H 5620 1246 50  0000 L CNN
-F 1 "5.1k" H 5620 1155 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5480 1200 50  0001 C CNN
-F 3 "~" H 5550 1200 50  0001 C CNN
-	1    5550 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C6
-U 1 1 6001C127
-P 6850 1250
-F 0 "C6" H 6965 1296 50  0000 L CNN
-F 1 "10µF" H 6965 1205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6888 1100 50  0001 C CNN
-F 3 "~" H 6850 1250 50  0001 C CNN
-F 4 "AVX" H 6850 1250 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 6850 1250 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 6850 1250 50  0001 C CNN "Notes"
-	1    6850 1250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6600 1500 6850 1500
 $Comp
@@ -289,32 +100,6 @@ Wire Wire Line
 	5550 1500 4550 1500
 Connection ~ 5550 1500
 $Comp
-L Device:L L4
-U 1 1 6003D354
-P 4900 2000
-F 0 "L4" V 5000 1850 50  0000 C CNN
-F 1 "4.7µH" V 5000 2050 50  0000 C CNN
-F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4900 2000 50  0001 C CNN
-F 3 "~" H 4900 2000 50  0001 C CNN
-F 4 "Murata" H 4900 2000 50  0001 C CNN "Mfg"
-F 5 "DFE201612E-4R7M=P2" H 4900 2000 50  0001 C CNN "Mfg Part No"
-	1    4900 2000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:D_Schottky_ALT D1
-U 1 1 6003D80B
-P 5050 1800
-F 0 "D1" H 5050 2016 50  0000 C CNN
-F 1 "NSR05T30" H 5050 1925 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-523" H 5050 1800 50  0001 C CNN
-F 3 "~" H 5050 1800 50  0001 C CNN
-F 4 "ON" H 5050 1800 50  0001 C CNN "Mfg"
-F 5 "NSR05T30XV2T5G" H 5050 1800 50  0001 C CNN "Mfg Part No"
-	1    5050 1800
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR02
 U 1 1 6004566E
 P 5050 2000
@@ -324,28 +109,6 @@ F 2 "" H 5050 2000 50  0001 C CNN
 F 3 "" H 5050 2000 50  0001 C CNN
 	1    5050 2000
 	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R3
-U 1 1 600483B9
-P 5550 2150
-F 0 "R3" H 5620 2196 50  0000 L CNN
-F 1 "5.1k" H 5620 2105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5480 2150 50  0001 C CNN
-F 3 "~" H 5550 2150 50  0001 C CNN
-	1    5550 2150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 6004B3A9
-P 5150 2450
-F 0 "R1" V 5265 2450 50  0000 C CNN
-F 1 "1k" V 5356 2450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5080 2450 50  0001 C CNN
-F 3 "~" H 5150 2450 50  0001 C CNN
-	1    5150 2450
-	0    1    1    0   
 $EndComp
 Wire Wire Line
 	4550 2250 5400 2250
@@ -359,20 +122,6 @@ Wire Wire Line
 Wire Wire Line
 	5550 2000 5550 1800
 Connection ~ 5550 1800
-$Comp
-L Device:C C7
-U 1 1 6005AFAA
-P 6850 2100
-F 0 "C7" H 6965 2146 50  0000 L CNN
-F 1 "10µF" H 6965 2055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6888 1950 50  0001 C CNN
-F 3 "~" H 6850 2100 50  0001 C CNN
-F 4 "AVX" H 6850 2100 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 6850 2100 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 6850 2100 50  0001 C CNN "Notes"
-	1    6850 2100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6850 1800 6850 1950
 $Comp
@@ -395,66 +144,11 @@ Wire Wire Line
 Wire Wire Line
 	3600 900  4000 900 
 Connection ~ 4000 900 
-$Comp
-L power:GND #PWR01
-U 1 1 6006474E
-P 3950 2750
-F 0 "#PWR01" H 3950 2500 50  0001 C CNN
-F 1 "GND" H 3955 2577 50  0000 C CNN
-F 2 "" H 3950 2750 50  0001 C CNN
-F 3 "" H 3950 2750 50  0001 C CNN
-	1    3950 2750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3950 2750 3950 2650
-$Comp
-L Device:C C3
-U 1 1 6006817D
-P 3600 2150
-F 0 "C3" H 3485 2196 50  0000 R CNN
-F 1 "10µF" H 3485 2105 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3638 2000 50  0001 C CNN
-F 3 "~" H 3600 2150 50  0001 C CNN
-F 4 "AVX" H 3600 2150 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 3600 2150 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 3600 2150 50  0001 C CNN "Notes"
-	1    3600 2150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3600 2000 3600 1550
 Connection ~ 3600 1550
 Wire Wire Line
 	3600 2300 3600 2650
-$Comp
-L Device:L_Core_Ferrite L2
-U 1 1 6006FC08
-P 2700 900
-F 0 "L2" V 2925 900 50  0000 C CNN
-F 1 "MMZ1608B601" V 2834 900 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 2700 900 50  0001 C CNN
-F 3 "~" H 2700 900 50  0001 C CNN
-F 4 "" H 2700 900 50  0001 C CNN "Mfg"
-F 5 "" H 2700 900 50  0001 C CNN "Mfg Part No"
-F 6 "" H 2700 900 50  0001 C CNN "Notes"
-	1    2700 900 
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:C C2
-U 1 1 60070C9C
-P 2250 2150
-F 0 "C2" H 2365 2196 50  0000 L CNN
-F 1 "10µF" H 2365 2105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 2288 2000 50  0001 C CNN
-F 3 "~" H 2250 2150 50  0001 C CNN
-F 4 "AVX" H 2250 2150 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 2250 2150 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 2250 2150 50  0001 C CNN "Notes"
-	1    2250 2150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2250 2000 2250 900 
 Wire Wire Line
@@ -462,20 +156,6 @@ Wire Wire Line
 Connection ~ 3600 900 
 Wire Wire Line
 	2250 2300 2250 2650
-$Comp
-L Device:C C9
-U 1 1 60085720
-P 7850 2100
-F 0 "C9" H 7965 2146 50  0000 L CNN
-F 1 "10µF" H 7965 2055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 7888 1950 50  0001 C CNN
-F 3 "~" H 7850 2100 50  0001 C CNN
-F 4 "AVX" H 7850 2100 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 7850 2100 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 7850 2100 50  0001 C CNN "Notes"
-	1    7850 2100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6850 1800 7250 1800
 Connection ~ 6850 1800
@@ -497,20 +177,6 @@ Wire Wire Line
 Wire Wire Line
 	7250 900  6850 900 
 Connection ~ 6850 900 
-$Comp
-L Device:C C8
-U 1 1 600A1BA9
-P 7850 1250
-F 0 "C8" H 7965 1296 50  0000 L CNN
-F 1 "10µF" H 7965 1205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 7888 1100 50  0001 C CNN
-F 3 "~" H 7850 1250 50  0001 C CNN
-F 4 "AVX" H 7850 1250 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 7850 1250 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 7850 1250 50  0001 C CNN "Notes"
-	1    7850 1250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6850 1500 7850 1500
 Wire Wire Line
@@ -519,97 +185,11 @@ Wire Wire Line
 	7850 1100 7850 900 
 Wire Wire Line
 	7850 900  7550 900 
-$Comp
-L Device:C C23
-U 1 1 600AFBED
-P 9300 4100
-F 0 "C23" H 9415 4146 50  0000 L CNN
-F 1 "100nF" H 9415 4055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 9338 3950 50  0001 C CNN
-F 3 "~" H 9300 4100 50  0001 C CNN
-	1    9300 4100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C25
-U 1 1 600AFF73
-P 9800 4100
-F 0 "C25" H 9915 4146 50  0000 L CNN
-F 1 "100nF" H 9915 4055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 9838 3950 50  0001 C CNN
-F 3 "~" H 9800 4100 50  0001 C CNN
-	1    9800 4100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C22
-U 1 1 600CD51E
-P 9300 3800
-F 0 "C22" H 9415 3846 50  0000 L CNN
-F 1 "100nF" H 9415 3755 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 9338 3650 50  0001 C CNN
-F 3 "~" H 9300 3800 50  0001 C CNN
-	1    9300 3800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C24
-U 1 1 600CD528
-P 9800 3800
-F 0 "C24" H 9915 3846 50  0000 L CNN
-F 1 "100nF" H 9915 3755 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 9838 3650 50  0001 C CNN
-F 3 "~" H 9800 3800 50  0001 C CNN
-	1    9800 3800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2000 900  2250 900 
 Connection ~ 2250 900 
-$Comp
-L Device:L_Core_Ferrite L6
-U 1 1 601059E4
-P 7400 1800
-F 0 "L6" V 7625 1800 50  0000 C CNN
-F 1 "MMZ1608B601" V 7534 1800 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 7400 1800 50  0001 C CNN
-F 3 "~" H 7400 1800 50  0001 C CNN
-F 4 "" H 7400 1800 50  0001 C CNN "Mfg"
-F 5 "" H 7400 1800 50  0001 C CNN "Mfg Part No"
-F 6 "" H 7400 1800 50  0001 C CNN "Notes"
-	1    7400 1800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:L_Core_Ferrite L5
-U 1 1 60106026
-P 7400 900
-F 0 "L5" V 7625 900 50  0000 C CNN
-F 1 "MMZ1608B601" V 7534 900 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 7400 900 50  0001 C CNN
-F 3 "~" H 7400 900 50  0001 C CNN
-F 4 "" H 7400 900 50  0001 C CNN "Mfg"
-F 5 "" H 7400 900 50  0001 C CNN "Mfg Part No"
-F 6 "" H 7400 900 50  0001 C CNN "Notes"
-	1    7400 900 
-	0    -1   -1   0   
-$EndComp
 Connection ~ 7850 900 
 Connection ~ 7850 1800
-$Comp
-L Device:C C4
-U 1 1 6015CE06
-P 6000 1200
-F 0 "C4" H 6115 1246 50  0000 L CNN
-F 1 "68pF" H 6115 1155 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6038 1050 50  0001 C CNN
-F 3 "~" H 6000 1200 50  0001 C CNN
-F 4 "Stackpole" H 6000 1200 50  0001 C CNN "Mfg"
-F 5 "CML0603C0G101JT50V" H 6000 1200 50  0001 C CNN "Mfg Part No"
-F 6 "NP0" H 6000 1200 50  0001 C CNN "Notes"
-	1    6000 1200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8800 3650 9300 3650
 Connection ~ 9300 3650
@@ -651,20 +231,6 @@ Wire Wire Line
 	5700 4200 5900 4200
 Wire Wire Line
 	5700 6000 5900 6000
-$Comp
-L Device:R R14
-U 1 1 607C1347
-P 5900 4450
-F 0 "R14" H 5970 4496 50  0000 L CNN
-F 1 "220" H 5970 4405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5830 4450 50  0001 C CNN
-F 3 "~" H 5900 4450 50  0001 C CNN
-F 4 "Panasonic" H 5900 4450 50  0001 C CNN "Mfg"
-F 5 "ERA-3AED221V" H 5900 4450 50  0001 C CNN "Mfg Part No"
-F 6 "0.5%, 25ppm/K" H 5900 4450 50  0001 C CNN "Notes"
-	1    5900 4450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5900 4300 5900 4200
 Connection ~ 5900 4200
@@ -683,34 +249,8 @@ Wire Wire Line
 	5900 4750 5900 4600
 Wire Wire Line
 	5000 4750 5900 4750
-$Comp
-L Switch:SW_SPST SW1
-U 1 1 607DECED
-P 5000 5100
-F 0 "SW1" V 5046 5198 50  0000 L CNN
-F 1 "GAIN" V 4955 5198 50  0000 L CNN
-F 2 "oscilloscope-probes:78HF01GWRT" H 5000 5100 50  0001 C CNN
-F 3 "~" H 5000 5100 50  0001 C CNN
-F 4 "Grayhill" H 5000 5100 50  0001 C CNN "Mfg"
-F 5 "78HF01GWRT" H 5000 5100 50  0001 C CNN "Mfg Part No"
-	1    5000 5100
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	8050 5100 8050 6000
-$Comp
-L Device:R_POT_TRIM RV2
-U 1 1 60961FFC
-P 8400 5650
-F 0 "RV2" H 8330 5696 50  0000 R CNN
-F 1 "30k" H 8330 5605 50  0000 R CNN
-F 2 "Potentiometer_SMD:Potentiometer_Bourns_TC33X_Vertical" H 8400 5650 50  0001 C CNN
-F 3 "~" H 8400 5650 50  0001 C CNN
-F 4 "Bourns" H 8400 5650 50  0001 C CNN "Mfg"
-F 5 "TC33X-2-303E" H 8400 5650 50  0001 C CNN "Mfg Part No"
-	1    8400 5650
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+6V #PWR019
 U 1 1 60969C2B
@@ -824,28 +364,6 @@ F 3 "" H 8400 5800 50  0001 C CNN
 	1    8400 5800
 	1    0    0    1   
 $EndComp
-$Comp
-L Device:R R16
-U 1 1 609A456A
-P 5450 4900
-F 0 "R16" V 5550 4900 50  0000 C CNN
-F 1 "24" V 5450 4900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5380 4900 50  0001 C CNN
-F 3 "~" H 5450 4900 50  0001 C CNN
-	1    5450 4900
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R17
-U 1 1 609A4AE0
-P 5450 5300
-F 0 "R17" V 5350 5300 50  0000 C CNN
-F 1 "24" V 5450 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5380 5300 50  0001 C CNN
-F 3 "~" H 5450 5300 50  0001 C CNN
-	1    5450 5300
-	0    1    1    0   
-$EndComp
 Connection ~ 5900 4750
 Connection ~ 5900 5450
 Wire Wire Line
@@ -854,82 +372,10 @@ Wire Wire Line
 	4300 5200 4300 5400
 Wire Wire Line
 	4300 5700 4300 5900
-$Comp
-L oscilloscope_probes:OPA659DRB U2
-U 1 1 60B65EF9
-P 5400 4200
-F 0 "U2" H 5450 4450 50  0000 L CNN
-F 1 "OPA659" H 5450 4350 50  0000 L CNN
-F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 5300 4000 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 5550 4350 50  0001 C CNN
-	1    5400 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L oscilloscope_probes:OPA659DRB U3
-U 1 1 60B67F03
-P 5400 6000
-F 0 "U3" H 5450 6250 50  0000 L CNN
-F 1 "OPA659" H 5450 6150 50  0000 L CNN
-F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 5300 5800 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 5550 6150 50  0001 C CNN
-	1    5400 6000
-	1    0    0    -1  
-$EndComp
-$Comp
-L oscilloscope_probes:OPA659DRB U4
-U 1 1 60B68D06
-P 7550 5100
-F 0 "U4" H 7600 5350 50  0000 L CNN
-F 1 "OPA659" H 7600 5250 50  0000 L CNN
-F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 7450 4900 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 7700 5250 50  0001 C CNN
-	1    7550 5100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8050 5100 8800 5100
 Wire Wire Line
 	9100 5100 9800 5100
-$Comp
-L Device:R R22
-U 1 1 5FFD71E5
-P 8950 5100
-F 0 "R22" V 8743 5100 50  0000 C CNN
-F 1 "49.9" V 8834 5100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 8880 5100 50  0001 C CNN
-F 3 "~" H 8950 5100 50  0001 C CNN
-	1    8950 5100
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R15
-U 1 1 607C0C4F
-P 5900 5700
-F 0 "R15" H 5970 5746 50  0000 L CNN
-F 1 "220" H 5970 5655 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5830 5700 50  0001 C CNN
-F 3 "~" H 5900 5700 50  0001 C CNN
-F 4 "Panasonic" H 5900 5700 50  0001 C CNN "Mfg"
-F 5 "ERA-3AED221V" H 5900 5700 50  0001 C CNN "Mfg Part No"
-F 6 "0.5%, 25ppm/K" H 5900 5700 50  0001 C CNN "Notes"
-	1    5900 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C26
-U 1 1 60C40A54
-P 3150 2150
-F 0 "C26" H 3035 2196 50  0000 R CNN
-F 1 "10µF" H 3035 2105 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3188 2000 50  0001 C CNN
-F 3 "~" H 3150 2150 50  0001 C CNN
-F 4 "AVX" H 3150 2150 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 3150 2150 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 3150 2150 50  0001 C CNN "Notes"
-	1    3150 2150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3150 2300 3150 2650
 Wire Wire Line
@@ -945,7 +391,7 @@ Wire Wire Line
 Wire Wire Line
 	2850 900  3150 900 
 Connection ~ 3150 900 
-Text Notes 2400 3500 0    50   ~ 0
+Text Notes 2200 3750 0    50   ~ 0
 C16 and C17 trim input divider compensation.\nRV1 trims low-frequency CMRR.\nRV2 trims input offset voltage.
 $Comp
 L power:+5V #PWR0101
@@ -960,17 +406,6 @@ F 3 "" H 1450 750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1450 750  1450 900 
-$Comp
-L Mechanical:MountingHole_Pad H1
-U 1 1 60E418CA
-P 10850 6100
-F 0 "H1" H 10950 6149 50  0000 L CNN
-F 1 "2.2mm" H 10950 6058 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad" H 10850 6100 50  0001 C CNN
-F 3 "~" H 10850 6100 50  0001 C CNN
-	1    10850 6100
-	1    0    0    -1  
-$EndComp
 Text Label 9900 5100 0    50   ~ 0
 OUT
 Wire Wire Line
@@ -986,163 +421,18 @@ Connection ~ 5300 4500
 Wire Wire Line
 	7550 5400 7450 5400
 Connection ~ 7450 5400
-$Comp
-L Connector:TestPoint TP2
-U 1 1 6117A4A6
-P 9300 3600
-F 0 "TP2" H 9358 3718 50  0000 L CNN
-F 1 "+6V" H 9358 3627 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 9500 3600 50  0001 C CNN
-F 3 "~" H 9500 3600 50  0001 C CNN
-	1    9300 3600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9300 3600 9300 3650
-$Comp
-L Connector:TestPoint TP3
-U 1 1 611852F2
-P 9300 4350
-F 0 "TP3" H 9242 4376 50  0000 R CNN
-F 1 "-6V" H 9242 4467 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 9500 4350 50  0001 C CNN
-F 3 "~" H 9500 4350 50  0001 C CNN
-	1    9300 4350
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	9300 4350 9300 4250
-$Comp
-L Connector:TestPoint TP1
-U 1 1 6118FE9D
-P 1000 800
-F 0 "TP1" H 1058 918 50  0000 L CNN
-F 1 "+5V" H 1058 827 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 1200 800 50  0001 C CNN
-F 3 "~" H 1200 800 50  0001 C CNN
-	1    1000 800 
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1450 900  1000 900 
 Wire Wire Line
 	1000 900  1000 800 
-$Comp
-L Connector:TestPoint TP4
-U 1 1 61235759
-P 1000 2750
-F 0 "TP4" H 942 2776 50  0000 R CNN
-F 1 "GND" H 942 2867 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 1200 2750 50  0001 C CNN
-F 3 "~" H 1200 2750 50  0001 C CNN
-	1    1000 2750
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	1000 2650 1000 2750
-$Comp
-L Device:L_Core_Ferrite L1
-U 1 1 61284E02
-P 1850 900
-F 0 "L1" V 2075 900 50  0000 C CNN
-F 1 "MMZ1608B601" V 1984 900 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 1850 900 50  0001 C CNN
-F 3 "~" H 1850 900 50  0001 C CNN
-F 4 "" H 1850 900 50  0001 C CNN "Mfg"
-F 5 "" H 1850 900 50  0001 C CNN "Mfg Part No"
-F 6 "" H 1850 900 50  0001 C CNN "Notes"
-	1    1850 900 
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:L_Core_Ferrite L8
-U 1 1 61285646
-P 8250 1800
-F 0 "L8" V 8475 1800 50  0000 C CNN
-F 1 "MMZ1608B601" V 8384 1800 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 8250 1800 50  0001 C CNN
-F 3 "~" H 8250 1800 50  0001 C CNN
-F 4 "" H 8250 1800 50  0001 C CNN "Mfg"
-F 5 "" H 8250 1800 50  0001 C CNN "Mfg Part No"
-F 6 "" H 8250 1800 50  0001 C CNN "Notes"
-	1    8250 1800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:L_Core_Ferrite L7
-U 1 1 61285BE1
-P 8250 900
-F 0 "L7" V 8475 900 50  0000 C CNN
-F 1 "MMZ1608B601" V 8384 900 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 8250 900 50  0001 C CNN
-F 3 "~" H 8250 900 50  0001 C CNN
-F 4 "" H 8250 900 50  0001 C CNN "Mfg"
-F 5 "" H 8250 900 50  0001 C CNN "Mfg Part No"
-F 6 "" H 8250 900 50  0001 C CNN "Notes"
-	1    8250 900 
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R7
-U 1 1 61479BEC
-P 9550 5650
-F 0 "R7" V 9757 5650 50  0000 C CNN
-F 1 "1k" V 9666 5650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 9480 5650 50  0001 C CNN
-F 3 "~" H 9550 5650 50  0001 C CNN
-	1    9550 5650
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	8550 5650 8700 5650
-$Comp
-L Device:C C10
-U 1 1 614AFE9C
-P 8700 5800
-F 0 "C10" H 8815 5846 50  0000 L CNN
-F 1 "100nF" H 8815 5755 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 8738 5650 50  0001 C CNN
-F 3 "~" H 8700 5800 50  0001 C CNN
-	1    8700 5800
-	1    0    0    -1  
-$EndComp
 Text Label 8900 5650 0    50   ~ 0
 OFFSET_TRIM
-$Comp
-L Device:LED_ALT D3
-U 1 1 60A80253
-P 10400 2200
-F 0 "D3" V 10439 2082 50  0000 R CNN
-F 1 "RED" V 10348 2082 50  0000 R CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 10400 2200 50  0001 C CNN
-F 3 "~" H 10400 2200 50  0001 C CNN
-F 4 "QT Brightek" H 10400 2200 50  0001 C CNN "Mfg"
-F 5 "QBLP601D-R" H 10400 2200 50  0001 C CNN "Mfg Part No"
-	1    10400 2200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R8
-U 1 1 60A80B86
-P 10400 1900
-F 0 "R8" H 10330 1854 50  0000 R CNN
-F 1 "5.1k" H 10330 1945 50  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 10330 1900 50  0001 C CNN
-F 3 "~" H 10400 1900 50  0001 C CNN
-	1    10400 1900
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:+6V #PWR023
-U 1 1 60A811C9
-P 10400 1750
-F 0 "#PWR023" H 10400 1600 50  0001 C CNN
-F 1 "+6V" H 10415 1923 50  0000 C CNN
-F 2 "" H 10400 1750 50  0001 C CNN
-F 3 "" H 10400 1750 50  0001 C CNN
-	1    10400 1750
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:-6V #PWR06
 U 1 1 6094C098
@@ -1179,34 +469,6 @@ Wire Wire Line
 	8650 900  8650 1100
 Wire Wire Line
 	8400 900  8650 900 
-$Comp
-L Device:C C12
-U 1 1 601067CF
-P 8650 1250
-F 0 "C12" H 8765 1296 50  0000 L CNN
-F 1 "10µF" H 8765 1205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 8688 1100 50  0001 C CNN
-F 3 "~" H 8650 1250 50  0001 C CNN
-F 4 "AVX" H 8650 1250 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 8650 1250 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 8650 1250 50  0001 C CNN "Notes"
-	1    8650 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C13
-U 1 1 601051C6
-P 8650 2100
-F 0 "C13" H 8765 2146 50  0000 L CNN
-F 1 "10µF" H 8765 2055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 8688 1950 50  0001 C CNN
-F 3 "~" H 8650 2100 50  0001 C CNN
-F 4 "AVX" H 8650 2100 50  0001 C CNN "Mfg"
-F 5 "0603ZD106KAT2A" H 8650 2100 50  0001 C CNN "Mfg Part No"
-F 6 "X5R, 10V" H 8650 2100 50  0001 C CNN "Notes"
-	1    8650 2100
-	1    0    0    -1  
-$EndComp
 Text Label 1600 5900 2    50   ~ 0
 CONN_IN-
 Text Label 1600 4100 2    50   ~ 0
@@ -1217,99 +479,21 @@ Text Label 2350 4100 0    50   ~ 0
 IN+
 Wire Wire Line
 	3500 4100 4300 4100
-$Comp
-L Connector_Generic:Conn_01x01 J5
-U 1 1 60DA61B8
-P 2800 5400
-F 0 "J5" V 2672 5480 50  0000 L CNN
-F 1 "Spring-G" V 2763 5480 50  0000 L CNN
-F 2 "oscilloscope-probes:TE_2306454_LEFT" H 2800 5400 50  0001 C CNN
-F 3 "~" H 2800 5400 50  0001 C CNN
-F 4 "TE" H 2800 5400 50  0001 C CNN "Mfg"
-F 5 "2306454-3" H 2800 5400 50  0001 C CNN "Mfg Part No"
-	1    2800 5400
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x01 J6
-U 1 1 60DA5D47
-P 2800 5600
-F 0 "J6" V 2764 5512 50  0000 R CNN
-F 1 "Spring-S" V 2673 5512 50  0000 R CNN
-F 2 "oscilloscope-probes:TE_2306454_LEFT" H 2800 5600 50  0001 C CNN
-F 3 "~" H 2800 5600 50  0001 C CNN
-F 4 "TE" H 2800 5600 50  0001 C CNN "Mfg"
-F 5 "2306454-3" H 2800 5600 50  0001 C CNN "Mfg Part No"
-	1    2800 5600
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x01 J4
-U 1 1 60D8D690
-P 2800 4650
-F 0 "J4" V 2764 4562 50  0000 R CNN
-F 1 "Spring+G" V 2673 4562 50  0000 R CNN
-F 2 "oscilloscope-probes:TE_2306454_RIGHT" H 2800 4650 50  0001 C CNN
-F 3 "~" H 2800 4650 50  0001 C CNN
-F 4 "TE" H 2800 4650 50  0001 C CNN "Mfg"
-F 5 "2306454-3" H 2800 4650 50  0001 C CNN "Mfg Part No"
-	1    2800 4650
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x01 J3
-U 1 1 60D8B9ED
-P 2800 4450
-F 0 "J3" V 2672 4530 50  0000 L CNN
-F 1 "Spring+S" V 2763 4530 50  0000 L CNN
-F 2 "oscilloscope-probes:TE_2306454_RIGHT" H 2800 4450 50  0001 C CNN
-F 3 "~" H 2800 4450 50  0001 C CNN
-F 4 "TE" H 2800 4450 50  0001 C CNN "Mfg"
-F 5 "2306454-3" H 2800 4450 50  0001 C CNN "Mfg Part No"
-	1    2800 4450
-	0    1    1    0   
-$EndComp
 Connection ~ 3500 5050
 Wire Wire Line
 	3500 4700 3500 5050
 Wire Wire Line
 	3500 4400 3500 4100
-$Comp
-L Device:CTRIM C16
-U 1 1 5FFC385B
-P 3500 4550
-F 0 "C16" H 3615 4596 50  0000 L CNN
-F 1 "8-30pF" H 3615 4505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_Trimmer_Murata_TZC3" H 3500 4550 50  0001 C CNN
-F 3 "~" H 3500 4550 50  0001 C CNN
-F 4 "EW" H 3500 4550 50  0001 C CNN "Mfg"
-F 5 "SGC3S300NM" H 3500 4550 50  0001 C CNN "Mfg Part No"
-	1    3500 4550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3500 5050 3500 5350
 Wire Wire Line
 	3500 5900 4300 5900
 Wire Wire Line
 	3500 5650 3500 5900
-$Comp
-L Device:CTRIM C17
-U 1 1 5FFC6B4E
-P 3500 5500
-F 0 "C17" H 3615 5546 50  0000 L CNN
-F 1 "8-30pF" H 3615 5455 50  0000 L CNN
-F 2 "Capacitor_SMD:C_Trimmer_Murata_TZC3" H 3500 5500 50  0001 C CNN
-F 3 "~" H 3500 5500 50  0001 C CNN
-F 4 "EW" H 3500 5500 50  0001 C CNN "Mfg"
-F 5 "SGC3S300NM" H 3500 5500 50  0001 C CNN "Mfg Part No"
-	1    3500 5500
-	1    0    0    1   
-$EndComp
 Text Notes 5000 3600 0    50   ~ 0
 Input stage has switchable 1x or 10x amplification.\n\nOutput differential amplifier has 2x amplification ratio.\nR18-R21 should have low thermal drift for good CMRR.
 Text Notes 1100 7450 0    50   ~ 0
-Probe tips have divider resistor and capacitor near the tip to minimize\ncapacitance. For 10x tweezers this is 9.53 Mohm || 1.2 pF.\nThe input impedance is 500 kohm || 10-30 pF.\nInput voltage range is +-3 V.
+Probe tips have divider resistor and capacitor near the tip to minimize\ncapacitance.\nThe input impedance is 500 kohm || 6-26 pF.\nInput voltage range is +-3 V.
 Wire Wire Line
 	3500 4100 2800 4100
 Connection ~ 3500 4100
@@ -1322,17 +506,6 @@ Wire Wire Line
 Connection ~ 2100 4100
 Wire Wire Line
 	2100 4100 1950 4100
-$Comp
-L power:GNDA #PWR08
-U 1 1 60E767AA
-P 8700 5950
-F 0 "#PWR08" H 8700 5700 50  0001 C CNN
-F 1 "GNDA" H 8705 5777 50  0000 C CNN
-F 2 "" H 8700 5950 50  0001 C CNN
-F 3 "" H 8700 5950 50  0001 C CNN
-	1    8700 5950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2100 5900 2800 5900
 Connection ~ 2100 5900
@@ -1357,31 +530,6 @@ Wire Wire Line
 Wire Wire Line
 	3500 5050 4150 5050
 Wire Wire Line
-	8700 5650 9400 5650
-Connection ~ 8700 5650
-$Comp
-L Device:R R23
-U 1 1 60EF13BA
-P 4750 4100
-F 0 "R23" V 4543 4100 50  0000 C CNN
-F 1 "110" V 4634 4100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4680 4100 50  0001 C CNN
-F 3 "~" H 4750 4100 50  0001 C CNN
-	1    4750 4100
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R11
-U 1 1 60EF1A20
-P 4700 5900
-F 0 "R11" V 4493 5900 50  0000 C CNN
-F 1 "110" V 4584 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4630 5900 50  0001 C CNN
-F 3 "~" H 4700 5900 50  0001 C CNN
-	1    4700 5900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
 	4300 5900 4550 5900
 Connection ~ 4300 5900
 Wire Wire Line
@@ -1403,17 +551,6 @@ F 3 "" H 10200 3950 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GNDA #PWR09
-U 1 1 60F293FA
-P 8050 4500
-F 0 "#PWR09" H 8050 4250 50  0001 C CNN
-F 1 "GNDA" H 8055 4327 50  0000 C CNN
-F 2 "" H 8050 4500 50  0001 C CNN
-F 3 "" H 8050 4500 50  0001 C CNN
-	1    8050 4500
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GNDA #PWR018
 U 1 1 60F29BD9
 P 10550 5700
@@ -1424,41 +561,12 @@ F 3 "" H 10550 5700 50  0001 C CNN
 	1    10550 5700
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:L_Core_Ferrite L9
-U 1 1 60F7A82C
-P 1850 2650
-F 0 "L9" V 2075 2650 50  0000 C CNN
-F 1 "MMZ1608B601" V 1984 2650 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 1850 2650 50  0001 C CNN
-F 3 "~" H 1850 2650 50  0001 C CNN
-F 4 "" H 1850 2650 50  0001 C CNN "Mfg"
-F 5 "" H 1850 2650 50  0001 C CNN "Mfg Part No"
-F 6 "" H 1850 2650 50  0001 C CNN "Notes"
-	1    1850 2650
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2000 2650 2250 2650
 Connection ~ 2250 2650
 Wire Wire Line
 	1000 2650 1450 2650
-$Comp
-L power:GNDA #PWR07
-U 1 1 60F917E9
-P 1450 2750
-F 0 "#PWR07" H 1450 2500 50  0001 C CNN
-F 1 "GNDA" H 1455 2577 50  0000 C CNN
-F 2 "" H 1450 2750 50  0001 C CNN
-F 3 "" H 1450 2750 50  0001 C CNN
-	1    1450 2750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1450 2750 1450 2650
 Connection ~ 1450 2650
-Wire Wire Line
-	1450 2650 1700 2650
 $Comp
 L power:GNDA #PWR026
 U 1 1 60F9CE71
@@ -1518,34 +626,10 @@ Wire Wire Line
 Connection ~ 9800 5100
 Wire Wire Line
 	9800 5100 10350 5100
-Text Notes 7950 3050 0    50   ~ 0
-Split ground plane keeps SMPS current spikes from\ninducing noise voltages to measurement circuit.\nPlane crossings are through ferrites.
 Wire Wire Line
 	5000 4900 5300 4900
 Wire Wire Line
 	5000 5300 5300 5300
-$Comp
-L Device:C C11
-U 1 1 610832FF
-P 6250 5700
-F 0 "C11" H 6135 5654 50  0000 R CNN
-F 1 "6pF" H 6135 5745 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6288 5550 50  0001 C CNN
-F 3 "~" H 6250 5700 50  0001 C CNN
-	1    6250 5700
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C1
-U 1 1 61083EFF
-P 6250 4450
-F 0 "C1" H 6135 4404 50  0000 R CNN
-F 1 "6pF" H 6135 4495 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6288 4300 50  0001 C CNN
-F 3 "~" H 6250 4450 50  0001 C CNN
-	1    6250 4450
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	6250 4300 6250 4200
 Connection ~ 6250 4200
@@ -1558,9 +642,9 @@ Wire Wire Line
 Wire Wire Line
 	5900 4750 5900 4900
 Wire Wire Line
-	5900 4900 5600 4900
+	5900 4900 5850 4900
 Wire Wire Line
-	5600 5300 5900 5300
+	5850 5300 5900 5300
 Wire Wire Line
 	5900 5300 5900 5450
 Wire Wire Line
@@ -1588,79 +672,18 @@ Wire Wire Line
 $Comp
 L power:+5V #PWR027
 U 1 1 610D6089
-P 10550 4700
-F 0 "#PWR027" H 10550 4550 50  0001 C CNN
-F 1 "+5V" H 10565 4873 50  0000 C CNN
-F 2 "" H 10550 4700 50  0001 C CNN
-F 3 "" H 10550 4700 50  0001 C CNN
-	1    10550 4700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_Coaxial J1
-U 1 1 610E351E
-P 10550 5100
-F 0 "J1" H 10650 5075 50  0000 L CNN
-F 1 "Triax_inner" H 10650 4984 50  0000 L CNN
-F 2 "oscilloscope-probes:COAX_2MM" H 10550 5100 50  0001 C CNN
-F 3 " ~" H 10550 5100 50  0001 C CNN
-F 4 "WE" H 10550 5100 50  0001 C CNN "Mfg"
-F 5 "970050244" H 10550 5100 50  0001 C CNN "Mfg Part No"
-	1    10550 5100
+P 10550 4900
+F 0 "#PWR027" H 10550 4750 50  0001 C CNN
+F 1 "+5V" H 10565 5073 50  0000 C CNN
+F 2 "" H 10550 4900 50  0001 C CNN
+F 3 "" H 10550 4900 50  0001 C CNN
+	1    10550 4900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	9700 5650 9800 5650
 Wire Wire Line
 	9800 5650 9800 5100
-$Comp
-L Device:R R10
-U 1 1 60AE60A5
-P 1800 5900
-F 0 "R10" V 1593 5900 50  0000 C CNN
-F 1 "49.9" V 1684 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 1730 5900 50  0001 C CNN
-F 3 "~" H 1800 5900 50  0001 C CNN
-	1    1800 5900
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R9
-U 1 1 60A9E9B4
-P 1800 4100
-F 0 "R9" V 1593 4100 50  0000 C CNN
-F 1 "49.9" V 1684 4100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 1730 4100 50  0001 C CNN
-F 3 "~" H 1800 4100 50  0001 C CNN
-	1    1800 4100
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:Conn_Coaxial J7
-U 1 1 61177003
-P 950 4100
-F 0 "J7" H 878 4338 50  0000 C CNN
-F 1 "IN+" H 878 4247 50  0000 C CNN
-F 2 "oscilloscope-probes:RF11-27A-T-00-50-G" H 950 4100 50  0001 C CNN
-F 3 " ~" H 950 4100 50  0001 C CNN
-F 4 "Adam Tech" H 950 4100 50  0001 C CNN "Mfg"
-F 5 "RF11-27A-T-00-50-G" H 950 4100 50  0001 C CNN "Mfg Part No"
-	1    950  4100
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_Coaxial J8
-U 1 1 6118DBB4
-P 950 5900
-F 0 "J8" H 850 6150 50  0000 L CNN
-F 1 "IN-" H 800 6050 50  0000 L CNN
-F 2 "oscilloscope-probes:RF11-27A-T-00-50-G" H 950 5900 50  0001 C CNN
-F 3 " ~" H 950 5900 50  0001 C CNN
-F 4 "Adam Tech" H 950 5900 50  0001 C CNN "Mfg"
-F 5 "RF11-27A-T-00-50-G" H 950 5900 50  0001 C CNN "Mfg Part No"
-	1    950  5900
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	950  4300 950  5050
 Wire Wire Line
@@ -1668,17 +691,6 @@ Wire Wire Line
 Connection ~ 950  5050
 Wire Wire Line
 	950  5050 950  5700
-$Comp
-L power:GNDA #PWR022
-U 1 1 611D1CC6
-P 1450 5150
-F 0 "#PWR022" H 1450 4900 50  0001 C CNN
-F 1 "GNDA" H 1455 4977 50  0000 C CNN
-F 2 "" H 1450 5150 50  0001 C CNN
-F 3 "" H 1450 5150 50  0001 C CNN
-	1    1450 5150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1450 5150 1450 5050
 Connection ~ 1450 5050
@@ -1690,70 +702,13 @@ Wire Wire Line
 Wire Wire Line
 	2100 5050 2800 5050
 Connection ~ 2100 5050
-$Comp
-L Device:D_Zener_x2_ACom_KKA D5
-U 1 1 60E2617C
-P 2100 5350
-F 0 "D5" V 2054 5428 50  0000 L CNN
-F 1 "PESD5V0X1B" V 2145 5428 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 2100 5350 50  0001 C CNN
-F 3 "~" H 2100 5350 50  0001 C CNN
-	1    2100 5350
-	0    1    1    0   
-$EndComp
 NoConn ~ 1900 4750
-$Comp
-L Device:D_Zener_x2_ACom_KKA D4
-U 1 1 60E3A3C3
-P 2100 4750
-F 0 "D4" V 2054 4828 50  0000 L CNN
-F 1 "PESD5V0X1B" V 2145 4828 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 2100 4750 50  0001 C CNN
-F 3 "~" H 2100 4750 50  0001 C CNN
-	1    2100 4750
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x01 J2
-U 1 1 612485BA
-P 10550 4900
-F 0 "J2" V 10422 4980 50  0000 L CNN
-F 1 "Triax_outer" V 10513 4980 50  0000 L CNN
-F 2 "oscilloscope-probes:TRIAX_OUTER_3MM" H 10550 4900 50  0001 C CNN
-F 3 "~" H 10550 4900 50  0001 C CNN
-F 4 "WE" H 10550 4900 50  0001 C CNN "Mfg"
-F 5 "970050354" H 10550 4900 50  0001 C CNN "Mfg Part No"
-	1    10550 4900
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1150 5900 1650 5900
 Wire Wire Line
 	1150 4100 1650 4100
-$Comp
-L power:GNDA #PWR0102
-U 1 1 614F2369
-P 10400 2350
-F 0 "#PWR0102" H 10400 2100 50  0001 C CNN
-F 1 "GNDA" H 10405 2177 50  0000 C CNN
-F 2 "" H 10400 2350 50  0001 C CNN
-F 3 "" H 10400 2350 50  0001 C CNN
-	1    10400 2350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9300 3950 9800 3950
-$Comp
-L Device:D_Zener_x2_ACom_KKA D6
-U 1 1 6164B593
-P 10100 5650
-F 0 "D6" H 10100 5866 50  0000 C CNN
-F 1 "PESD5V0X1B" H 10100 5775 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 10100 5650 50  0001 C CNN
-F 3 "~" H 10100 5650 50  0001 C CNN
-	1    10100 5650
-	1    0    0    -1  
-$EndComp
 Connection ~ 9800 5650
 Wire Wire Line
 	10550 5700 10550 5650
@@ -1770,31 +725,121 @@ Wire Wire Line
 	9300 3650 9800 3650
 Wire Wire Line
 	9800 4250 9300 4250
-$Comp
-L Device:C C20
-U 1 1 6174E32E
-P 8800 3800
-F 0 "C20" H 8915 3846 50  0000 L CNN
-F 1 "100nF" H 8915 3755 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 8838 3650 50  0001 C CNN
-F 3 "~" H 8800 3800 50  0001 C CNN
-	1    8800 3800
-	1    0    0    -1  
-$EndComp
 Connection ~ 8800 3650
-$Comp
-L Device:C C21
-U 1 1 6174E548
-P 8800 4100
-F 0 "C21" H 8915 4146 50  0000 L CNN
-F 1 "100nF" H 8915 4055 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 8838 3950 50  0001 C CNN
-F 3 "~" H 8800 4100 50  0001 C CNN
-	1    8800 4100
-	1    0    0    -1  
-$EndComp
 Connection ~ 8800 3950
 Connection ~ 8800 4250
+Wire Wire Line
+	7350 4000 6950 4000
+Wire Wire Line
+	6950 4000 6950 4200
+Wire Wire Line
+	7650 4000 8050 4000
+Wire Wire Line
+	8050 4000 8050 4200
+Connection ~ 8050 4200
+Wire Wire Line
+	1450 2650 1700 2650
+Wire Wire Line
+	2000 2650 2250 2650
+$Comp
+L power:GND #PWR01
+U 1 1 6006474E
+P 3950 2750
+F 0 "#PWR01" H 3950 2500 50  0001 C CNN
+F 1 "GND" H 3955 2577 50  0000 C CNN
+F 2 "" H 3950 2750 50  0001 C CNN
+F 3 "" H 3950 2750 50  0001 C CNN
+	1    3950 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR07
+U 1 1 60F917E9
+P 1450 2750
+F 0 "#PWR07" H 1450 2500 50  0001 C CNN
+F 1 "GNDA" H 1455 2577 50  0000 C CNN
+F 2 "" H 1450 2750 50  0001 C CNN
+F 3 "" H 1450 2750 50  0001 C CNN
+	1    1450 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 2750 3950 2650
+Wire Wire Line
+	8550 5650 9400 5650
+Wire Wire Line
+	5300 5250 5300 5300
+Connection ~ 5300 5300
+Wire Wire Line
+	5300 5300 5550 5300
+Wire Wire Line
+	5300 4950 5300 4900
+Connection ~ 5300 4900
+Wire Wire Line
+	5300 4900 5550 4900
+$Comp
+L power:-6V #PWR0102
+U 1 1 611A3C41
+P 10400 2350
+F 0 "#PWR0102" H 10400 2450 50  0001 C CNN
+F 1 "-6V" H 10415 2523 50  0000 C CNN
+F 2 "" H 10400 2350 50  0001 C CNN
+F 3 "" H 10400 2350 50  0001 C CNN
+	1    10400 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GNDA #PWR0103
+U 1 1 611A3F96
+P 10400 1750
+F 0 "#PWR0103" H 10400 1500 50  0001 C CNN
+F 1 "GNDA" H 10405 1577 50  0000 C CNN
+F 2 "" H 10400 1750 50  0001 C CNN
+F 3 "" H 10400 1750 50  0001 C CNN
+	1    10400 1750
+	-1   0    0    1   
+$EndComp
+Text Notes 7600 3050 0    50   ~ 0
+Split ground plane keeps SMPS current spikes from\ninducing noise voltages to measurement circuit.\nPlane crossings are through ferrites.
+$Comp
+L oscilloscope_probes:Conn_Triaxial J1
+U 1 1 61150BA8
+P 10550 5100
+F 0 "J1" H 10690 5146 50  0000 L CNN
+F 1 "Conn_Triaxial" H 10690 5055 50  0000 L CNN
+F 2 "oscilloscope-probes:TRIAX_SOLDER" H 10550 5100 50  0001 C CNN
+F 3 " ~" H 10550 5100 50  0001 C CNN
+	1    10550 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L9
+U 1 1 60F7A82C
+P 1850 2650
+F 0 "L9" V 2075 2650 50  0000 C CNN
+F 1 "BLM18KG102" V 1984 2650 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 1850 2650 50  0001 C CNN
+F 3 "~" H 1850 2650 50  0001 C CNN
+F 4 "" H 1850 2650 50  0001 C CNN "Mfg"
+F 5 "" H 1850 2650 50  0001 C CNN "Mfg Part No"
+F 6 "" H 1850 2650 50  0001 C CNN "Notes"
+	1    1850 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 614293EE
+P 5300 5100
+F 0 "R4" H 5370 5146 50  0000 L CNN
+F 1 "22k" H 5370 5055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5230 5100 50  0001 C CNN
+F 3 "~" H 5300 5100 50  0001 C CNN
+F 4 "Panasonic" H 5300 5100 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED111V" H 5300 5100 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 5300 5100 50  0001 C CNN "Notes"
+	1    5300 5100
+	1    0    0    -1  
+$EndComp
 $Comp
 L Device:C C18
 U 1 1 60BF3058
@@ -1806,33 +851,978 @@ F 3 "~" H 7500 4000 50  0001 C CNN
 	1    7500 4000
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	7350 4000 6950 4000
-Wire Wire Line
-	6950 4000 6950 4200
-Wire Wire Line
-	7650 4000 8050 4000
-Wire Wire Line
-	8050 4000 8050 4200
-Connection ~ 8050 4200
 $Comp
-L Device:R R?
-U 1 1 614293EE
-P 6250 5100
-F 0 "R?" H 6320 5146 50  0000 L CNN
-F 1 "N/A" H 6320 5055 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6180 5100 50  0001 C CNN
-F 3 "~" H 6250 5100 50  0001 C CNN
-F 4 "Panasonic" H 6250 5100 50  0001 C CNN "Mfg"
-F 5 "ERA-3AED111V" H 6250 5100 50  0001 C CNN "Mfg Part No"
-F 6 "0.5%, 25ppm/K" H 6250 5100 50  0001 C CNN "Notes"
-	1    6250 5100
+L Device:C C21
+U 1 1 6174E548
+P 8800 4100
+F 0 "C21" H 8915 4146 50  0000 L CNN
+F 1 "100nF" H 8915 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8838 3950 50  0001 C CNN
+F 3 "~" H 8800 4100 50  0001 C CNN
+	1    8800 4100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6250 4950 6250 4750
-Connection ~ 6250 4750
-Wire Wire Line
-	6250 5250 6250 5450
-Connection ~ 6250 5450
+$Comp
+L Device:C C20
+U 1 1 6174E32E
+P 8800 3800
+F 0 "C20" H 8915 3846 50  0000 L CNN
+F 1 "100nF" H 8915 3755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8838 3650 50  0001 C CNN
+F 3 "~" H 8800 3800 50  0001 C CNN
+	1    8800 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Zener_x2_ACom_KKA D6
+U 1 1 6164B593
+P 10100 5650
+F 0 "D6" H 10100 5866 50  0000 C CNN
+F 1 "PESD5V0X1B" H 10100 5775 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 10100 5650 50  0001 C CNN
+F 3 "~" H 10100 5650 50  0001 C CNN
+	1    10100 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Zener_x2_ACom_KKA D4
+U 1 1 60E3A3C3
+P 2100 4750
+F 0 "D4" V 2054 4828 50  0000 L CNN
+F 1 "PESD5V0X1B" V 2145 4828 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2100 4750 50  0001 C CNN
+F 3 "~" H 2100 4750 50  0001 C CNN
+	1    2100 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_Zener_x2_ACom_KKA D5
+U 1 1 60E2617C
+P 2100 5350
+F 0 "D5" V 2054 5428 50  0000 L CNN
+F 1 "PESD5V0X1B" V 2145 5428 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2100 5350 50  0001 C CNN
+F 3 "~" H 2100 5350 50  0001 C CNN
+	1    2100 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_Coaxial J8
+U 1 1 6118DBB4
+P 950 5900
+F 0 "J8" H 850 6150 50  0000 L CNN
+F 1 "IN-" H 800 6050 50  0000 L CNN
+F 2 "oscilloscope-probes:MMCX_Molex_73415-0961_Horizontal_1.6mm-PCB" H 950 5900 50  0001 C CNN
+F 3 " ~" H 950 5900 50  0001 C CNN
+F 4 "Molex" H 950 5900 50  0001 C CNN "Mfg"
+F 5 "0734150963" H 950 5900 50  0001 C CNN "Mfg Part No"
+	1    950  5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_Coaxial J7
+U 1 1 61177003
+P 950 4100
+F 0 "J7" H 878 4338 50  0000 C CNN
+F 1 "IN+" H 878 4247 50  0000 C CNN
+F 2 "oscilloscope-probes:MMCX_Molex_73415-0961_Horizontal_1.6mm-PCB" H 950 4100 50  0001 C CNN
+F 3 " ~" H 950 4100 50  0001 C CNN
+F 4 "Molex" H 950 4100 50  0001 C CNN "Mfg"
+F 5 "0734150963" H 950 4100 50  0001 C CNN "Mfg Part No"
+	1    950  4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 60A9E9B4
+P 1800 4100
+F 0 "R9" V 1593 4100 50  0000 C CNN
+F 1 "49.9" V 1684 4100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1730 4100 50  0001 C CNN
+F 3 "~" H 1800 4100 50  0001 C CNN
+	1    1800 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 60AE60A5
+P 1800 5900
+F 0 "R10" V 1593 5900 50  0000 C CNN
+F 1 "49.9" V 1684 5900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1730 5900 50  0001 C CNN
+F 3 "~" H 1800 5900 50  0001 C CNN
+	1    1800 5900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 61083EFF
+P 6250 4450
+F 0 "C1" H 6135 4404 50  0000 R CNN
+F 1 "6pF" H 6135 4495 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6288 4300 50  0001 C CNN
+F 3 "~" H 6250 4450 50  0001 C CNN
+	1    6250 4450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C11
+U 1 1 610832FF
+P 6250 5700
+F 0 "C11" H 6135 5654 50  0000 R CNN
+F 1 "6pF" H 6135 5745 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6288 5550 50  0001 C CNN
+F 3 "~" H 6250 5700 50  0001 C CNN
+	1    6250 5700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R11
+U 1 1 60EF1A20
+P 4700 5900
+F 0 "R11" V 4493 5900 50  0000 C CNN
+F 1 "110" V 4584 5900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4630 5900 50  0001 C CNN
+F 3 "~" H 4700 5900 50  0001 C CNN
+	1    4700 5900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R23
+U 1 1 60EF13BA
+P 4750 4100
+F 0 "R23" V 4543 4100 50  0000 C CNN
+F 1 "110" V 4634 4100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4680 4100 50  0001 C CNN
+F 3 "~" H 4750 4100 50  0001 C CNN
+	1    4750 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:CTRIM C17
+U 1 1 5FFC6B4E
+P 3500 5500
+F 0 "C17" H 3615 5546 50  0000 L CNN
+F 1 "4.5-20pF" H 3615 5455 50  0000 L CNN
+F 2 "oscilloscope-probes:C_Trimmer_Knowles_JZ_JR" H 3500 5500 50  0001 C CNN
+F 3 "~" H 3500 5500 50  0001 C CNN
+F 4 "Knowles" H 3500 5500 50  0001 C CNN "Mfg"
+F 5 "JZ200" H 3500 5500 50  0001 C CNN "Mfg Part No"
+F 6 "Alternative: JR200" H 3500 5500 50  0001 C CNN "Notes"
+	1    3500 5500
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:CTRIM C16
+U 1 1 5FFC385B
+P 3500 4550
+F 0 "C16" H 3615 4596 50  0000 L CNN
+F 1 "4.5-20pF" H 3615 4505 50  0000 L CNN
+F 2 "oscilloscope-probes:C_Trimmer_Knowles_JZ_JR" H 3500 4550 50  0001 C CNN
+F 3 "~" H 3500 4550 50  0001 C CNN
+F 4 "Knowles" H 3500 4550 50  0001 C CNN "Mfg"
+F 5 "JZ200" H 3500 4550 50  0001 C CNN "Mfg Part No"
+F 6 "Alternative: JR200" H 3500 4550 50  0001 C CNN "Notes"
+	1    3500 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J3
+U 1 1 60D8B9ED
+P 2800 4450
+F 0 "J3" V 2672 4530 50  0000 L CNN
+F 1 "Spring+S" V 2763 4530 50  0000 L CNN
+F 2 "oscilloscope-probes:TE_2306454_RIGHT" H 2800 4450 50  0001 C CNN
+F 3 "~" H 2800 4450 50  0001 C CNN
+F 4 "TE" H 2800 4450 50  0001 C CNN "Mfg"
+F 5 "2306454-3" H 2800 4450 50  0001 C CNN "Mfg Part No"
+	1    2800 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J4
+U 1 1 60D8D690
+P 2800 4650
+F 0 "J4" V 2764 4562 50  0000 R CNN
+F 1 "Spring+G" V 2673 4562 50  0000 R CNN
+F 2 "oscilloscope-probes:TE_2306454_RIGHT" H 2800 4650 50  0001 C CNN
+F 3 "~" H 2800 4650 50  0001 C CNN
+F 4 "TE" H 2800 4650 50  0001 C CNN "Mfg"
+F 5 "2306454-3" H 2800 4650 50  0001 C CNN "Mfg Part No"
+	1    2800 4650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J6
+U 1 1 60DA5D47
+P 2800 5600
+F 0 "J6" V 2764 5512 50  0000 R CNN
+F 1 "Spring-S" V 2673 5512 50  0000 R CNN
+F 2 "oscilloscope-probes:TE_2306454_LEFT" H 2800 5600 50  0001 C CNN
+F 3 "~" H 2800 5600 50  0001 C CNN
+F 4 "TE" H 2800 5600 50  0001 C CNN "Mfg"
+F 5 "2306454-3" H 2800 5600 50  0001 C CNN "Mfg Part No"
+	1    2800 5600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J5
+U 1 1 60DA61B8
+P 2800 5400
+F 0 "J5" V 2672 5480 50  0000 L CNN
+F 1 "Spring-G" V 2763 5480 50  0000 L CNN
+F 2 "oscilloscope-probes:TE_2306454_LEFT" H 2800 5400 50  0001 C CNN
+F 3 "~" H 2800 5400 50  0001 C CNN
+F 4 "TE" H 2800 5400 50  0001 C CNN "Mfg"
+F 5 "2306454-3" H 2800 5400 50  0001 C CNN "Mfg Part No"
+	1    2800 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C13
+U 1 1 601051C6
+P 8650 2100
+F 0 "C13" H 8765 2146 50  0000 L CNN
+F 1 "10µF" H 8765 2055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8688 1950 50  0001 C CNN
+F 3 "~" H 8650 2100 50  0001 C CNN
+F 4 "AVX" H 8650 2100 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 8650 2100 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 8650 2100 50  0001 C CNN "Notes"
+	1    8650 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C12
+U 1 1 601067CF
+P 8650 1250
+F 0 "C12" H 8765 1296 50  0000 L CNN
+F 1 "10µF" H 8765 1205 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8688 1100 50  0001 C CNN
+F 3 "~" H 8650 1250 50  0001 C CNN
+F 4 "AVX" H 8650 1250 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 8650 1250 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 8650 1250 50  0001 C CNN "Notes"
+	1    8650 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 60A80B86
+P 10400 1900
+F 0 "R8" H 10330 1854 50  0000 R CNN
+F 1 "5.1k" H 10330 1945 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10330 1900 50  0001 C CNN
+F 3 "~" H 10400 1900 50  0001 C CNN
+	1    10400 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_ALT D3
+U 1 1 60A80253
+P 10400 2200
+F 0 "D3" V 10439 2082 50  0000 R CNN
+F 1 "RED" V 10348 2082 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 10400 2200 50  0001 C CNN
+F 3 "~" H 10400 2200 50  0001 C CNN
+F 4 "QT Brightek" H 10400 2200 50  0001 C CNN "Mfg"
+F 5 "QBLP601D-R" H 10400 2200 50  0001 C CNN "Mfg Part No"
+	1    10400 2200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 61479BEC
+P 9550 5650
+F 0 "R7" V 9757 5650 50  0000 C CNN
+F 1 "1k" V 9666 5650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 9480 5650 50  0001 C CNN
+F 3 "~" H 9550 5650 50  0001 C CNN
+	1    9550 5650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L7
+U 1 1 61285BE1
+P 8250 900
+F 0 "L7" V 8475 900 50  0000 C CNN
+F 1 "MMZ1608B601" V 8384 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 8250 900 50  0001 C CNN
+F 3 "~" H 8250 900 50  0001 C CNN
+F 4 "" H 8250 900 50  0001 C CNN "Mfg"
+F 5 "" H 8250 900 50  0001 C CNN "Mfg Part No"
+F 6 "" H 8250 900 50  0001 C CNN "Notes"
+	1    8250 900 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L8
+U 1 1 61285646
+P 8250 1800
+F 0 "L8" V 8475 1800 50  0000 C CNN
+F 1 "MMZ1608B601" V 8384 1800 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 8250 1800 50  0001 C CNN
+F 3 "~" H 8250 1800 50  0001 C CNN
+F 4 "" H 8250 1800 50  0001 C CNN "Mfg"
+F 5 "" H 8250 1800 50  0001 C CNN "Mfg Part No"
+F 6 "" H 8250 1800 50  0001 C CNN "Notes"
+	1    8250 1800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L1
+U 1 1 61284E02
+P 1850 900
+F 0 "L1" V 2075 900 50  0000 C CNN
+F 1 "BLM18KG102" V 1984 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 1850 900 50  0001 C CNN
+F 3 "~" H 1850 900 50  0001 C CNN
+F 4 "" H 1850 900 50  0001 C CNN "Mfg"
+F 5 "" H 1850 900 50  0001 C CNN "Mfg Part No"
+F 6 "" H 1850 900 50  0001 C CNN "Notes"
+	1    1850 900 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 61235759
+P 1000 2750
+F 0 "TP4" H 942 2776 50  0000 R CNN
+F 1 "GND" H 942 2867 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 1200 2750 50  0001 C CNN
+F 3 "~" H 1200 2750 50  0001 C CNN
+	1    1000 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint TP1
+U 1 1 6118FE9D
+P 1000 800
+F 0 "TP1" H 1058 918 50  0000 L CNN
+F 1 "+5V" H 1058 827 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 1200 800 50  0001 C CNN
+F 3 "~" H 1200 800 50  0001 C CNN
+	1    1000 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 611852F2
+P 9300 4350
+F 0 "TP3" H 9242 4376 50  0000 R CNN
+F 1 "-6V" H 9242 4467 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 9500 4350 50  0001 C CNN
+F 3 "~" H 9500 4350 50  0001 C CNN
+	1    9300 4350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 6117A4A6
+P 9300 3600
+F 0 "TP2" H 9358 3718 50  0000 L CNN
+F 1 "+6V" H 9358 3627 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 9500 3600 50  0001 C CNN
+F 3 "~" H 9500 3600 50  0001 C CNN
+	1    9300 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 60E418CA
+P 10850 6100
+F 0 "H1" H 10950 6149 50  0000 L CNN
+F 1 "2.2mm" H 10950 6058 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad" H 10850 6100 50  0001 C CNN
+F 3 "~" H 10850 6100 50  0001 C CNN
+	1    10850 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C26
+U 1 1 60C40A54
+P 3150 2150
+F 0 "C26" H 3035 2196 50  0000 R CNN
+F 1 "10µF" H 3035 2105 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3188 2000 50  0001 C CNN
+F 3 "~" H 3150 2150 50  0001 C CNN
+F 4 "AVX" H 3150 2150 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 3150 2150 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 3150 2150 50  0001 C CNN "Notes"
+	1    3150 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R15
+U 1 1 607C0C4F
+P 5900 5700
+F 0 "R15" H 5970 5746 50  0000 L CNN
+F 1 "220" H 5970 5655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5830 5700 50  0001 C CNN
+F 3 "~" H 5900 5700 50  0001 C CNN
+F 4 "Panasonic" H 5900 5700 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED221V" H 5900 5700 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 5900 5700 50  0001 C CNN "Notes"
+	1    5900 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R22
+U 1 1 5FFD71E5
+P 8950 5100
+F 0 "R22" V 8743 5100 50  0000 C CNN
+F 1 "49.9" V 8834 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8880 5100 50  0001 C CNN
+F 3 "~" H 8950 5100 50  0001 C CNN
+	1    8950 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L oscilloscope_probes:OPA659DRB U4
+U 1 1 60B68D06
+P 7550 5100
+F 0 "U4" H 7600 5350 50  0000 L CNN
+F 1 "OPA659" H 7600 5250 50  0000 L CNN
+F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 7450 4900 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 7700 5250 50  0001 C CNN
+	1    7550 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L oscilloscope_probes:OPA659DRB U3
+U 1 1 60B67F03
+P 5400 6000
+F 0 "U3" H 5450 6250 50  0000 L CNN
+F 1 "OPA659" H 5450 6150 50  0000 L CNN
+F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 5300 5800 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 5550 6150 50  0001 C CNN
+	1    5400 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L oscilloscope_probes:OPA659DRB U2
+U 1 1 60B65EF9
+P 5400 4200
+F 0 "U2" H 5450 4450 50  0000 L CNN
+F 1 "OPA659" H 5450 4350 50  0000 L CNN
+F 2 "Package_SON:Texas_S-PVSON-N8_ThermalVias" H 5300 4000 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa842.pdf" H 5550 4350 50  0001 C CNN
+	1    5400 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 609A4AE0
+P 5700 5300
+F 0 "R17" V 5600 5300 50  0000 C CNN
+F 1 "24" V 5700 5300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5630 5300 50  0001 C CNN
+F 3 "~" H 5700 5300 50  0001 C CNN
+	1    5700 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R16
+U 1 1 609A456A
+P 5700 4900
+F 0 "R16" V 5800 4900 50  0000 C CNN
+F 1 "24" V 5700 4900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5630 4900 50  0001 C CNN
+F 3 "~" H 5700 4900 50  0001 C CNN
+	1    5700 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_POT_TRIM RV2
+U 1 1 60961FFC
+P 8400 5650
+F 0 "RV2" H 8330 5696 50  0000 R CNN
+F 1 "25k" H 8330 5605 50  0000 R CNN
+F 2 "Potentiometer_SMD:Potentiometer_Bourns_3314J_Vertical" H 8400 5650 50  0001 C CNN
+F 3 "~" H 8400 5650 50  0001 C CNN
+F 4 "Bourns" H 8400 5650 50  0001 C CNN "Mfg"
+F 5 "3314J-1-253E" H 8400 5650 50  0001 C CNN "Mfg Part No"
+	1    8400 5650
+	1    0    0    1   
+$EndComp
+$Comp
+L Switch:SW_SPST SW1
+U 1 1 607DECED
+P 5000 5100
+F 0 "SW1" V 5046 5198 50  0000 L CNN
+F 1 "GAIN" V 4955 5198 50  0000 L CNN
+F 2 "oscilloscope-probes:JS202011JCQN" H 5000 5100 50  0001 C CNN
+F 3 "~" H 5000 5100 50  0001 C CNN
+F 4 "C&K" H 5000 5100 50  0001 C CNN "Mfg"
+F 5 "JS202011JCQN" H 5000 5100 50  0001 C CNN "Mfg Part No"
+	1    5000 5100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R14
+U 1 1 607C1347
+P 5900 4450
+F 0 "R14" H 5970 4496 50  0000 L CNN
+F 1 "220" H 5970 4405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5830 4450 50  0001 C CNN
+F 3 "~" H 5900 4450 50  0001 C CNN
+F 4 "Panasonic" H 5900 4450 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED221V" H 5900 4450 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 5900 4450 50  0001 C CNN "Notes"
+	1    5900 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 6015CE06
+P 6000 1200
+F 0 "C4" H 6115 1246 50  0000 L CNN
+F 1 "68pF" H 6115 1155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6038 1050 50  0001 C CNN
+F 3 "~" H 6000 1200 50  0001 C CNN
+F 4 "Stackpole" H 6000 1200 50  0001 C CNN "Mfg"
+F 5 "CML0603C0G101JT50V" H 6000 1200 50  0001 C CNN "Mfg Part No"
+F 6 "NP0" H 6000 1200 50  0001 C CNN "Notes"
+	1    6000 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L5
+U 1 1 60106026
+P 7400 900
+F 0 "L5" V 7625 900 50  0000 C CNN
+F 1 "MMZ1608B601" V 7534 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 7400 900 50  0001 C CNN
+F 3 "~" H 7400 900 50  0001 C CNN
+F 4 "" H 7400 900 50  0001 C CNN "Mfg"
+F 5 "" H 7400 900 50  0001 C CNN "Mfg Part No"
+F 6 "" H 7400 900 50  0001 C CNN "Notes"
+	1    7400 900 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L6
+U 1 1 601059E4
+P 7400 1800
+F 0 "L6" V 7625 1800 50  0000 C CNN
+F 1 "MMZ1608B601" V 7534 1800 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 7400 1800 50  0001 C CNN
+F 3 "~" H 7400 1800 50  0001 C CNN
+F 4 "" H 7400 1800 50  0001 C CNN "Mfg"
+F 5 "" H 7400 1800 50  0001 C CNN "Mfg Part No"
+F 6 "" H 7400 1800 50  0001 C CNN "Notes"
+	1    7400 1800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C24
+U 1 1 600CD528
+P 9800 3800
+F 0 "C24" H 9915 3846 50  0000 L CNN
+F 1 "100nF" H 9915 3755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9838 3650 50  0001 C CNN
+F 3 "~" H 9800 3800 50  0001 C CNN
+	1    9800 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C22
+U 1 1 600CD51E
+P 9300 3800
+F 0 "C22" H 9415 3846 50  0000 L CNN
+F 1 "100nF" H 9415 3755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9338 3650 50  0001 C CNN
+F 3 "~" H 9300 3800 50  0001 C CNN
+	1    9300 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C25
+U 1 1 600AFF73
+P 9800 4100
+F 0 "C25" H 9915 4146 50  0000 L CNN
+F 1 "100nF" H 9915 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9838 3950 50  0001 C CNN
+F 3 "~" H 9800 4100 50  0001 C CNN
+	1    9800 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C23
+U 1 1 600AFBED
+P 9300 4100
+F 0 "C23" H 9415 4146 50  0000 L CNN
+F 1 "100nF" H 9415 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9338 3950 50  0001 C CNN
+F 3 "~" H 9300 4100 50  0001 C CNN
+	1    9300 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C8
+U 1 1 600A1BA9
+P 7850 1250
+F 0 "C8" H 7965 1296 50  0000 L CNN
+F 1 "10µF" H 7965 1205 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7888 1100 50  0001 C CNN
+F 3 "~" H 7850 1250 50  0001 C CNN
+F 4 "AVX" H 7850 1250 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 7850 1250 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 7850 1250 50  0001 C CNN "Notes"
+	1    7850 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C9
+U 1 1 60085720
+P 7850 2100
+F 0 "C9" H 7965 2146 50  0000 L CNN
+F 1 "10µF" H 7965 2055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7888 1950 50  0001 C CNN
+F 3 "~" H 7850 2100 50  0001 C CNN
+F 4 "AVX" H 7850 2100 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 7850 2100 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 7850 2100 50  0001 C CNN "Notes"
+	1    7850 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 60070C9C
+P 2250 2150
+F 0 "C2" H 2365 2196 50  0000 L CNN
+F 1 "10µF" H 2365 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2288 2000 50  0001 C CNN
+F 3 "~" H 2250 2150 50  0001 C CNN
+F 4 "AVX" H 2250 2150 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 2250 2150 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 2250 2150 50  0001 C CNN "Notes"
+	1    2250 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Core_Ferrite L2
+U 1 1 6006FC08
+P 2700 900
+F 0 "L2" V 2925 900 50  0000 C CNN
+F 1 "BLM18KG102" V 2834 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 2700 900 50  0001 C CNN
+F 3 "~" H 2700 900 50  0001 C CNN
+F 4 "" H 2700 900 50  0001 C CNN "Mfg"
+F 5 "" H 2700 900 50  0001 C CNN "Mfg Part No"
+F 6 "" H 2700 900 50  0001 C CNN "Notes"
+	1    2700 900 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 6006817D
+P 3600 2150
+F 0 "C3" H 3485 2196 50  0000 R CNN
+F 1 "10µF" H 3485 2105 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3638 2000 50  0001 C CNN
+F 3 "~" H 3600 2150 50  0001 C CNN
+F 4 "AVX" H 3600 2150 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 3600 2150 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 3600 2150 50  0001 C CNN "Notes"
+	1    3600 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C7
+U 1 1 6005AFAA
+P 6850 2100
+F 0 "C7" H 6965 2146 50  0000 L CNN
+F 1 "10µF" H 6965 2055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6888 1950 50  0001 C CNN
+F 3 "~" H 6850 2100 50  0001 C CNN
+F 4 "AVX" H 6850 2100 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 6850 2100 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 6850 2100 50  0001 C CNN "Notes"
+	1    6850 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 6004B3A9
+P 5150 2450
+F 0 "R1" V 5265 2450 50  0000 C CNN
+F 1 "1k" V 5356 2450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5080 2450 50  0001 C CNN
+F 3 "~" H 5150 2450 50  0001 C CNN
+	1    5150 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 600483B9
+P 5550 2150
+F 0 "R3" H 5620 2196 50  0000 L CNN
+F 1 "5.1k" H 5620 2105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5480 2150 50  0001 C CNN
+F 3 "~" H 5550 2150 50  0001 C CNN
+	1    5550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky_ALT D1
+U 1 1 6003D80B
+P 5050 1800
+F 0 "D1" H 5050 2016 50  0000 C CNN
+F 1 "SBR1A20" H 5050 1925 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 5050 1800 50  0001 C CNN
+F 3 "~" H 5050 1800 50  0001 C CNN
+F 4 "Diodes Inc." H 5050 1800 50  0001 C CNN "Mfg"
+F 5 "SBR1A20" H 5050 1800 50  0001 C CNN "Mfg Part No"
+	1    5050 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L4
+U 1 1 6003D354
+P 4900 2000
+F 0 "L4" V 5000 1850 50  0000 C CNN
+F 1 "4.7µH" V 5000 2050 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4900 2000 50  0001 C CNN
+F 3 "~" H 4900 2000 50  0001 C CNN
+F 4 "Murata" H 4900 2000 50  0001 C CNN "Mfg"
+F 5 "DFE201612E-4R7M=P2" H 4900 2000 50  0001 C CNN "Mfg Part No"
+	1    4900 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 6001C127
+P 6850 1250
+F 0 "C6" H 6965 1296 50  0000 L CNN
+F 1 "10µF" H 6965 1205 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6888 1100 50  0001 C CNN
+F 3 "~" H 6850 1250 50  0001 C CNN
+F 4 "AVX" H 6850 1250 50  0001 C CNN "Mfg"
+F 5 "0603ZD106KAT2A" H 6850 1250 50  0001 C CNN "Mfg Part No"
+F 6 "X5R, 10V" H 6850 1250 50  0001 C CNN "Notes"
+	1    6850 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 6001C7D7
+P 5550 1200
+F 0 "R2" H 5620 1246 50  0000 L CNN
+F 1 "5.1k" H 5620 1155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5480 1200 50  0001 C CNN
+F 3 "~" H 5550 1200 50  0001 C CNN
+	1    5550 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 6001CEAD
+P 6450 1500
+F 0 "R6" V 6243 1500 50  0000 C CNN
+F 1 "1k" V 6334 1500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6380 1500 50  0001 C CNN
+F 3 "~" H 6450 1500 50  0001 C CNN
+	1    6450 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 6001F562
+P 6000 2150
+F 0 "C5" H 6115 2196 50  0000 L CNN
+F 1 "68pF" H 6115 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6038 2000 50  0001 C CNN
+F 3 "~" H 6000 2150 50  0001 C CNN
+F 4 "Stackpole" H 6000 2150 50  0001 C CNN "Mfg"
+F 5 "CML0603C0G101JT50V" H 6000 2150 50  0001 C CNN "Mfg Part No"
+F 6 "NP0" H 6000 2150 50  0001 C CNN "Notes"
+	1    6000 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L3
+U 1 1 60016B32
+P 4650 900
+F 0 "L3" V 4840 900 50  0000 C CNN
+F 1 "4.7µH" V 4749 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4650 900 50  0001 C CNN
+F 3 "~" H 4650 900 50  0001 C CNN
+F 4 "Murata" H 4650 900 50  0001 C CNN "Mfg"
+F 5 "DFE201612E-4R7M=P2" H 4650 900 50  0001 C CNN "Mfg Part No"
+	1    4650 900 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L oscilloscope_probes:R1283 U1
+U 1 1 600163B0
+P 4200 1750
+F 0 "U1" H 4050 1500 50  0000 R CNN
+F 1 "R1283K001C" H 4350 1400 50  0000 R CNN
+F 2 "Package_DFN_QFN:DFN-12-1EP_3x4mm_P0.5mm_EP1.7x3.3mm" H 3450 1700 50  0001 C CNN
+F 3 "" H 3450 1700 50  0001 C CNN
+	1    4200 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 5FFC6B30
+P 4300 5550
+F 0 "R13" H 4230 5504 50  0000 R CNN
+F 1 "487k" H 4230 5595 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 5550 50  0001 C CNN
+F 3 "~" H 4300 5550 50  0001 C CNN
+	1    4300 5550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_POT_TRIM RV1
+U 1 1 5FFC2E47
+P 4300 5050
+F 0 "RV1" H 4230 5096 50  0000 R CNN
+F 1 "25k" H 4230 5005 50  0000 R CNN
+F 2 "Potentiometer_SMD:Potentiometer_Bourns_3314J_Vertical" H 4300 5050 50  0001 C CNN
+F 3 "~" H 4300 5050 50  0001 C CNN
+F 4 "Bourns" H 4300 5050 50  0001 C CNN "Mfg"
+F 5 "3314J-1-253E" H 4300 5050 50  0001 C CNN "Mfg Part No"
+	1    4300 5050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R20
+U 1 1 5FFD20E6
+P 7500 4200
+F 0 "R20" V 7385 4200 50  0000 C CNN
+F 1 "220" V 7294 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7430 4200 50  0001 C CNN
+F 3 "~" H 7500 4200 50  0001 C CNN
+F 4 "Panasonic" H 7500 4200 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED221V" H 7500 4200 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 7500 4200 50  0001 C CNN "Notes"
+	1    7500 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C19
+U 1 1 5FFCFCEA
+P 7500 6200
+F 0 "C19" V 7660 6200 50  0000 C CNN
+F 1 "6pF" V 7751 6200 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7538 6050 50  0001 C CNN
+F 3 "~" H 7500 6200 50  0001 C CNN
+	1    7500 6200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R21
+U 1 1 5FFCF65A
+P 7500 6000
+F 0 "R21" V 7707 6000 50  0000 C CNN
+F 1 "220" V 7616 6000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7430 6000 50  0001 C CNN
+F 3 "~" H 7500 6000 50  0001 C CNN
+F 4 "Panasonic" H 7500 6000 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED221V" H 7500 6000 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 7500 6000 50  0001 C CNN "Notes"
+	1    7500 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R18
+U 1 1 5FFCCE21
+P 6500 4200
+F 0 "R18" V 6707 4200 50  0000 C CNN
+F 1 "110" V 6616 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6430 4200 50  0001 C CNN
+F 3 "~" H 6500 4200 50  0001 C CNN
+F 4 "Panasonic" H 6500 4200 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED111V" H 6500 4200 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 6500 4200 50  0001 C CNN "Notes"
+	1    6500 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R19
+U 1 1 5FFCB3C4
+P 6500 6000
+F 0 "R19" V 6385 6000 50  0000 C CNN
+F 1 "110" V 6294 6000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6430 6000 50  0001 C CNN
+F 3 "~" H 6500 6000 50  0001 C CNN
+F 4 "Panasonic" H 6500 6000 50  0001 C CNN "Mfg"
+F 5 "ERA-3AED111V" H 6500 6000 50  0001 C CNN "Mfg Part No"
+F 6 "0.5%, 25ppm/K" H 6500 6000 50  0001 C CNN "Notes"
+	1    6500 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R12
+U 1 1 5FFC2685
+P 4300 4500
+F 0 "R12" H 4370 4546 50  0000 L CNN
+F 1 "487k" H 4370 4455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 4500 50  0001 C CNN
+F 3 "~" H 4300 4500 50  0001 C CNN
+	1    4300 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky_ALT D2
+U 1 1 6001B522
+P 5050 900
+F 0 "D2" H 5050 684 50  0000 C CNN
+F 1 "SBR1A20" H 5050 775 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 5050 900 50  0001 C CNN
+F 3 "~" H 5050 900 50  0001 C CNN
+F 4 "Diodes Inc." H 5050 900 50  0001 C CNN "Mfg"
+F 5 "SBR1A20" H 5050 900 50  0001 C CNN "Mfg Part No"
+	1    5050 900 
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GNDA #PWR0104
+U 1 1 6147A90B
+P 8050 4500
+F 0 "#PWR0104" H 8050 4250 50  0001 C CNN
+F 1 "GNDA" H 8055 4327 50  0000 C CNN
+F 2 "" H 8050 4500 50  0001 C CNN
+F 3 "" H 8050 4500 50  0001 C CNN
+	1    8050 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR0105
+U 1 1 6147ACA4
+P 1450 5150
+F 0 "#PWR0105" H 1450 4900 50  0001 C CNN
+F 1 "GNDA" H 1455 4977 50  0000 C CNN
+F 2 "" H 1450 5150 50  0001 C CNN
+F 3 "" H 1450 5150 50  0001 C CNN
+	1    1450 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP8
+U 1 1 614AD230
+P 1150 5900
+F 0 "TP8" H 1100 6150 50  0000 R CNN
+F 1 "IN-" H 1100 6050 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 1350 5900 50  0001 C CNN
+F 3 "~" H 1350 5900 50  0001 C CNN
+	1    1150 5900
+	-1   0    0    1   
+$EndComp
+Connection ~ 1150 5900
+$Comp
+L Connector:TestPoint TP7
+U 1 1 614AE3AD
+P 1150 4100
+F 0 "TP7" H 1100 4350 50  0000 R CNN
+F 1 "IN+" H 1100 4250 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 1350 4100 50  0001 C CNN
+F 3 "~" H 1350 4100 50  0001 C CNN
+	1    1150 4100
+	-1   0    0    -1  
+$EndComp
+Connection ~ 1150 4100
 $EndSCHEMATC

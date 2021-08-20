@@ -54,39 +54,6 @@ F 6 "1%, >= 600V" H 3850 2800 50  0001 C CNN "Notes"
 	1    3850 2800
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:C C6
-U 1 1 60B67038
-P 6250 2950
-F 0 "C6" H 6365 2904 50  0000 L CNN
-F 1 "360pF" H 6365 2995 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6288 2800 50  0001 C CNN
-F 3 "~" H 6250 2950 50  0001 C CNN
-F 4 "C0603C361G5GAC7867" H 6250 2950 50  0001 C CNN "Mfg Part No"
-F 5 "KEMET" H 6250 2950 50  0001 C CNN "Mfg"
-F 6 "NP0, 2%" H 6250 2950 50  0001 C CNN "Notes"
-	1    6250 2950
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6250 2800 6550 2800
-$Comp
-L Device:R R6
-U 1 1 60B6842C
-P 6550 2950
-F 0 "R6" H 6480 2904 50  0000 R CNN
-F 1 "499k" H 6480 2995 50  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6480 2950 50  0001 C CNN
-F 3 "~" H 6550 2950 50  0001 C CNN
-	1    6550 2950
-	-1   0    0    1   
-$EndComp
-Connection ~ 6550 2800
-Wire Wire Line
-	6250 3100 6550 3100
-Connection ~ 6550 3100
-Wire Wire Line
-	6550 2800 7150 2800
 Wire Wire Line
 	2900 2800 3100 2800
 $Comp
@@ -214,12 +181,78 @@ Wire Wire Line
 Connection ~ 4600 2800
 Wire Wire Line
 	4600 2800 4700 2800
+Connection ~ 4100 2800
+Connection ~ 4100 3100
+Text Notes 6050 4100 0    50   ~ 0
+C6 must be chosen according to cable capacitance.\nThe total capacitance of cable plus the 20 pF nominal amplifier\ncapacitance must be 400 pF.
 Wire Wire Line
 	5000 2800 5100 2800
+Connection ~ 5100 2800
 Wire Wire Line
 	5000 3100 5100 3100
+Connection ~ 5100 3100
 Wire Wire Line
 	5100 3100 5100 2800
+Wire Wire Line
+	5100 2800 5200 2800
+Wire Wire Line
+	5100 3100 5200 3100
+$Comp
+L power:GND #PWR01
+U 1 1 60B68D14
+P 6550 3200
+F 0 "#PWR01" H 6550 2950 50  0001 C CNN
+F 1 "GND" H 6555 3027 50  0000 C CNN
+F 2 "" H 6550 3200 50  0001 C CNN
+F 3 "" H 6550 3200 50  0001 C CNN
+	1    6550 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 3200 6550 3100
+Connection ~ 5600 2800
+Connection ~ 6250 2800
+Wire Wire Line
+	6250 2800 5600 2800
+Wire Wire Line
+	5600 3100 5600 2800
+Wire Wire Line
+	5500 3100 5600 3100
+Wire Wire Line
+	5500 2800 5600 2800
+Wire Wire Line
+	6550 2800 7150 2800
+Connection ~ 6550 3100
+Wire Wire Line
+	6250 3100 6550 3100
+Connection ~ 6550 2800
+$Comp
+L Device:R R6
+U 1 1 60B6842C
+P 6550 2950
+F 0 "R6" H 6480 2904 50  0000 R CNN
+F 1 "499k" H 6480 2995 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6480 2950 50  0001 C CNN
+F 3 "~" H 6550 2950 50  0001 C CNN
+	1    6550 2950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6250 2800 6550 2800
+$Comp
+L Device:C C6
+U 1 1 60B67038
+P 6250 2950
+F 0 "C6" H 6365 2904 50  0000 L CNN
+F 1 "360pF" H 6365 2995 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6288 2800 50  0001 C CNN
+F 3 "~" H 6250 2950 50  0001 C CNN
+F 4 "C0603C361G5GAC7867" H 6250 2950 50  0001 C CNN "Mfg Part No"
+F 5 "KEMET" H 6250 2950 50  0001 C CNN "Mfg"
+F 6 "NP0, 2%" H 6250 2950 50  0001 C CNN "Notes"
+	1    6250 2950
+	-1   0    0    1   
+$EndComp
 $Comp
 L Device:R R5
 U 1 1 60B82DE2
@@ -248,43 +281,12 @@ F 6 "C1206C100FGGAC7800" H 5350 3100 50  0001 C CNN "Mfg Part No"
 	1    5350 3100
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5100 3100 5200 3100
-Wire Wire Line
-	5100 2800 5200 2800
-Wire Wire Line
-	5500 2800 5600 2800
-Wire Wire Line
-	5500 3100 5600 3100
-Wire Wire Line
-	5600 3100 5600 2800
-Connection ~ 5100 2800
-Connection ~ 5100 3100
-Wire Wire Line
-	6250 2800 5600 2800
-Connection ~ 6250 2800
-Connection ~ 5600 2800
-Connection ~ 4100 2800
-Connection ~ 4100 3100
-Wire Wire Line
-	6550 3200 6550 3100
-$Comp
-L power:GND #PWR01
-U 1 1 60B68D14
-P 6550 3200
-F 0 "#PWR01" H 6550 2950 50  0001 C CNN
-F 1 "GND" H 6555 3027 50  0000 C CNN
-F 2 "" H 6550 3200 50  0001 C CNN
-F 3 "" H 6550 3200 50  0001 C CNN
-	1    6550 3200
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:Conn_01x01_Female J2
-U 1 1 60B8DDDA
+U 1 1 611D6C9D
 P 7350 2800
 F 0 "J2" H 7378 2826 50  0000 L CNN
-F 1 "Coax center" H 7378 2735 50  0000 L CNN
+F 1 "Out" H 7378 2735 50  0000 L CNN
 F 2 "oscilloscope-probes:SIMPLE_PAD" H 7350 2800 50  0001 C CNN
 F 3 "~" H 7350 2800 50  0001 C CNN
 	1    7350 2800
@@ -292,10 +294,10 @@ F 3 "~" H 7350 2800 50  0001 C CNN
 $EndComp
 $Comp
 L Connector:Conn_01x01_Female J3
-U 1 1 60B8E0A8
+U 1 1 611D6DF1
 P 7350 3100
 F 0 "J3" H 7378 3126 50  0000 L CNN
-F 1 "Coax shield" H 7378 3035 50  0000 L CNN
+F 1 "GND" H 7378 3035 50  0000 L CNN
 F 2 "oscilloscope-probes:SIMPLE_PAD" H 7350 3100 50  0001 C CNN
 F 3 "~" H 7350 3100 50  0001 C CNN
 	1    7350 3100
@@ -303,6 +305,4 @@ F 3 "~" H 7350 3100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7150 3100 6550 3100
-Text Notes 6050 4100 0    50   ~ 0
-C6 must be chosen according to cable capacitance.\nThe total capacitance of cable plus the 20 pF nominal amplifier\ncapacitance must be 400 pF.
 $EndSCHEMATC

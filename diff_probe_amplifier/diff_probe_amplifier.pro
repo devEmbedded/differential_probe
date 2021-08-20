@@ -1,4 +1,4 @@
-update=Fri 04 Jun 2021 11:38:05 EEST
+update=Wed 11 Aug 2021 13:02:44 EEST
 version=1
 last_client=kicad
 [general]
@@ -27,7 +27,7 @@ version=1
 PageLayoutDescrFile=
 LastNetListRead=
 CopperLayerCount=4
-BoardThickness=1
+BoardThickness=1.6
 AllowMicroVias=0
 AllowBlindVias=0
 RequireCourtyardDefinitions=0
@@ -39,8 +39,9 @@ MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
 TrackWidth1=0.25
-TrackWidth2=0.4
-TrackWidth3=1
+TrackWidth2=0.3
+TrackWidth3=0.5
+TrackWidth4=1
 ViaDiameter1=0.6
 ViaDrill1=0.3
 ViaDiameter2=1.4

@@ -293,6 +293,35 @@ X B 2 200 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# oscilloscope_probes_Conn_Triaxial
+#
+DEF oscilloscope_probes_Conn_Triaxial J 0 40 Y N 1 F N
+F0 "J" 150 100 50 H V C CNN
+F1 "oscilloscope_probes_Conn_Triaxial" 450 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ *BNC*
+ *SMA*
+ *SMB*
+ *SMC*
+ *Cinch*
+$ENDFPLIST
+DRAW
+A -25 -25 79 -1616 -1084 0 1 0 N -100 -50 -50 -100
+A -2 0 71 1636 0 0 1 10 N -70 20 70 0
+A -1 0 71 0 -1638 0 1 10 N 70 0 -70 -20
+A 0 0 112 -266 -634 0 1 0 N 100 -50 50 -100
+A 0 0 112 -265 1533 0 1 0 N 100 -50 -100 50
+C 0 0 20 0 1 8 N
+P 2 0 1 0 -100 0 -20 0 N
+P 2 0 1 0 0 -100 0 -70 N
+X In 1 -200 0 100 R 50 50 1 1 P
+X Ext 2 0 -200 100 U 50 50 1 1 P
+X ~ 3 0 200 87 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # oscilloscope_probes_OPA659DRB
 #
 DEF oscilloscope_probes_OPA659DRB U 0 5 Y Y 1 F N
