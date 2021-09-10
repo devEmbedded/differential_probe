@@ -976,6 +976,73 @@ No ferrites but 220 ohm input resistors on amplifier PCB:
 It appears that the input resistors are unable to remove the resonance. That is probably because they are only on signal lines, while most of the resonance is common-mode on the shield. Small ferrites are the best solution.
 
 
+Revision 4
+==========
 
+Main changes were:
+* Switch to MMCX connectors for smaller size and better availability
+* Consequently allowed relayout and changing to different switch model
+* Also add back ground plane on layer 2 to fix SMPS resonance problems.
 
+![](rev4_review.jpg)
 
+![](schematic_rev4.png)
+
+Frequency response tuning
+-------------------------
+
+Previously I have been measuring bandwidth using the differential tweezer tips.
+This confounds the amplifier response with the self-inductance of the tweezers.
+Instead, I now made a small adapter that has 50 ohm termination for cable coming from VNA, and then 9.53 Mohm || 15 pF series divider, as close to the MMCX connector as possible.
+This permits measuring only the amplifier response, and then separately tuning the probe attachments.
+
+The main tunable parameter is the amplifier lowpass capacitors C1, C11, C18 and C19.
+I ran a series of measurements on different revisions and different capacitor values:
+
+![](response_comparison.png)
+
+The increased distance to ground plane is visible in revision 3.
+It does permit a bit higher bandwidth, but causes more ripple in the passband response, probably because the impedance varies more when other traces run closer than the ground plane.
+
+Overall, revision 4 with 4.8 pF (or 4.7 pF standard value) looks like a good option. The response of the probe attachments will balance out the slight high-frequency peaking.
+
+Thermal drift testing
+---------------------
+
+Most of the power-on thermal drift is caused by the OPA659 input offset voltage. Starting at 25°C, the opamp internals will heat up to approximately 60°C. This will cause 0.4 mV typical, 1.4 mV max change in input offset of each opamp. If all opamps would drift in worst-case directions, this would get amplified by 5x in 2x gain mode, and by 41x in 20x gain mode.
+
+But the drift can be reduced by choosing the frontend opamps from the same batch and layouting the PCB so that the temperature of them is as close to each other as possible. If the both frontend opamps drift in same direction, the drift is canceled out in the differential stage. To accomplish this, the cooling copper area should be symmetric.
+
+Additionally, it helps to reduce the total thermal mass in the cooling area, even if it means that the final temperature is slightly higher. This way the device achieves the final temperature faster after power-on.
+
+![](thermal_drift_rev4.png)
+
+There has been significant improvement in revision 4, though it will require more prototypes to tell whether it is just due to individual component variations.
+
+Capacitive noise coupling
+-------------------------
+
+The distance between SMPS switching node and the negative input spring contact is too small and causes noise on output. This is especially visible when input is disconnected:
+
+![](rev4_smps_cap_coupling_before.png)
+
+Copper shielding tape appears to help:
+
+![](rev4_smps_cap_coupling_shield_tape.png)
+
+Possibly the layout could still be adjusted to increase the distance, but the copper shield tape is a reasonable option also.
+
+Evaluation of split GND effectiveness
+-------------------------------------
+
+Rev4 PCB has an option to join the split GND planes with a solder bridge to evaluate whether there is any point to having the split GND for the SMPS section.
+
+With split GND, 20x gain setting:
+
+![](rev4_smps_split_gnd_10x.png)
+
+With joined GND:
+
+![](rev4_smps_joined_gnd_10x.png)
+
+There is a small but detectable difference.
